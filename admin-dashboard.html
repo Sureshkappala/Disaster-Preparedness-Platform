@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - SafeAlert Command</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--primary);">
+
+  <!-- MOBILE TOGGLE HEADER -->
+  <div class="db-mobile-header">
+    <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+    <a href="admin-dashboard.html" class="db-mobile-logo" style="text-decoration: none;">
+      <div class="logo" style="pointer-events: none;">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </div>
+    </a>
+    <div class="db-mobile-avatar user-avatar" style="background-color: var(--accent);">AD</div>
+  </div>
+  
+  <!-- Sidebar Backdrop Overlay -->
+  <div class="db-sidebar-overlay"></div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="db-container">
+    
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside class="db-sidebar">
+      <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="overflow-y: auto; height: 100%; display: flex; flex-direction: column;">
+        <a href="admin-dashboard.html" class="sidebar-logo" style="text-decoration: none;">
+          <div class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </div>
+        </a>
+        
+        <!-- Group 1: Safety Command -->
+        <div class="sidebar-section-title">Command Control</div>
+        <nav class="sidebar-menu">
+          <a href="admin-dashboard.html" class="sidebar-link active"><i class="fa-solid fa-chart-pie"></i> Safety Control Board</a>
+          <a href="db-admin-blueprints.html" class="sidebar-link"><i class="fa-solid fa-book-bookmark"></i> Drill Blueprints</a>
+          <a href="db-admin-dispatch.html" class="sidebar-link"><i class="fa-solid fa-bullhorn"></i> Dispatch Warnings</a>
+        </nav>
+
+        <!-- Group 2: Agency Oversight -->
+        <div class="sidebar-section-title">Oversight</div>
+        <nav class="sidebar-menu">
+          <a href="db-admin-threats.html" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> Active Threat Zones</a>
+          <a href="db-admin-cert.html" class="sidebar-link"><i class="fa-solid fa-users"></i> CERT Networks</a>
+        </nav>
+
+        <!-- Logout -->
+        <div class="sidebar-logout">
+          <a href="login.html" class="sidebar-link" onclick="localStorage.clear();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT DISPLAY -->
+    <main class="dashboard-content">
+      
+      <!-- DESKTOP TOP BAR -->
+      <div class="dashboard-header">
+        <div>
+          <span class="badge badge-alert">Coordinator Console</span>
+          <h1>Safety Command</h1>
+        </div>
+        <div class="dashboard-user-bar">
+          <button class="notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge"></span>
+          </button>
+          <div class="user-profile-menu">
+            <div class="user-avatar" style="background-color: var(--accent);">AD</div>
+            <div class="user-details">
+              <span class="user-name">SAFETY COORDINATOR</span>
+              <span class="user-role">Safety Officer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- METRICS GRID -->
+      <div class="db-metrics reveal-stagger">
+        <div class="db-card">
+          <div class="db-card-info">
+            <h3>Active CERT Members</h3>
+            <div class="db-card-value">1,240 Members</div>
+          </div>
+          <div class="db-card-icon"><i class="fa-solid fa-users"></i></div>
+        </div>
+        <div class="db-card db-card-accent">
+          <div class="db-card-info">
+            <h3>Drills Scheduled</h3>
+            <div class="db-card-value">48 Sessions</div>
+          </div>
+          <div class="db-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        </div>
+        <div class="db-card">
+          <div class="db-card-info">
+            <h3>Safety Rating</h3>
+            <div class="db-card-value" style="color: var(--secondary);">99.8% Perfect</div>
+          </div>
+          <div class="db-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        </div>
+        <div class="db-card db-card-accent">
+          <div class="db-card-info">
+            <h3>Assigned Sector</h3>
+            <div class="db-card-value" style="font-size: 1.5rem;">Washington D.C.</div>
+          </div>
+          <div class="db-card-icon" style="background-color: rgba(249, 115, 22, 0.12); color: var(--accent);"><i class="fa-solid fa-map-location-dot"></i></div>
+        </div>
+      </div>
+
+      <!-- GRID LAYOUT -->
+      <div class="db-grid reveal-stagger">
+        <!-- Panel 1: Progress Chart -->
+        <div class="db-panel">
+          <div class="db-panel-header">
+            <h2>Drills Compliance Score</h2>
+            <span style="font-size:0.8rem; color:var(--text-muted);">Quarterly Target</span>
+          </div>
+          <div class="chart-container">
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">40%</span>
+              <div class="chart-bar" data-height="40%" style="background-color: var(--accent);"></div>
+              <span class="chart-bar-label">Q1</span>
+            </div>
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">60%</span>
+              <div class="chart-bar" data-height="60%" style="background-color: var(--warning);"></div>
+              <span class="chart-bar-label">Q2</span>
+            </div>
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">75%</span>
+              <div class="chart-bar" data-height="75%" style="background-color: var(--secondary);"></div>
+              <span class="chart-bar-label">Q3</span>
+            </div>
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">90%</span>
+              <div class="chart-bar" data-height="90%" style="background-color: var(--secondary);"></div>
+              <span class="chart-bar-label">Q4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Threat breakdown -->
+        <div class="db-panel" style="border-color: var(--border-glass) !important;">
+          <div class="db-panel-header">
+            <h2>Safety Incident Oversight</h2>
+          </div>
+          <div class="chart-pie-container">
+            <div class="chart-pie-sim" style="background: conic-gradient(var(--danger) 0% 45%, var(--warning) 45% 75%, var(--secondary) 75% 100%);"></div>
+            <div class="chart-pie-legend">
+              <div class="legend-item"><span class="legend-color" style="background-color: var(--danger);"></span> Fire Drills (45%)</div>
+              <div class="legend-item"><span class="legend-color" style="background-color: var(--warning);"></span> Flood Drills (30%)</div>
+              <div class="legend-item"><span class="legend-color legend-primary"></span> Storm Drills (25%)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: MEMBERS STATUS TABLE -->
+      <div class="db-panel" style="margin-bottom: 30px;">
+        <div class="db-panel-header">
+          <h2>High-Priority District Actions</h2>
+        </div>
+        <div class="table-responsive">
+          <table class="db-table">
+            <thead>
+              <tr>
+                <th>District Sector</th>
+                <th>Safety Coordinator Lead</th>
+                <th>Checklist Compliance</th>
+                <th>Drill Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color:#fff; font-weight:600;">Sector A - East Washington</td>
+                <td>Coordinator Sarah</td>
+                <td>$15,400 Drill Funding Allocated</td>
+                <td><span class="status-indicator status-active" style="cursor:pointer;" onclick="location.href='404.html'">Inspect Log</span></td>
+              </tr>
+              <tr>
+                <td style="color:#fff; font-weight:600;">Sector B - North Washington</td>
+                <td>Coordinator Robert</td>
+                <td>$24,800 Drill Funding Pending</td>
+                <td><span class="status-indicator status-active" style="cursor:pointer;" onclick="location.href='404.html'">Inspect Log</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

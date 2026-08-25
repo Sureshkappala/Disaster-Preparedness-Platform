@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Kit Builder - Survival Supplies</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- FIXED/STICKY HEADER & NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search resources..." onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="disaster-types.html">Disaster Types</a></li>
+          <li><a href="preparedness-guides.html">Preparedness Guides</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Prepared</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-SAFE</p>
+          <p><i class="fa-solid fa-envelope"></i> support@safealert.org</p>
+          <p><i class="fa-solid fa-location-dot"></i> 100 Safety Boulevard, Washington D.C.</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Prepared</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header reveal">
+    <div class="container">
+      <span class="badge">Dynamic Supply Calculator</span>
+      <h1>Emergency Kit Builder</h1>
+      <p>Select items below to calculate your preparedness level. State is saved automatically to your profile.</p>
+    </div>
+  </div>
+
+  <!-- KIT BUILDER SECTION -->
+  <section class="section">
+    <div class="container kit-builder-layout">
+      <!-- Left column: categories and items -->
+      <div class="kit-builder-categories">
+        
+        <!-- Category 1: Hydration & Food -->
+        <div class="kit-category-card glass-panel">
+          <div class="kit-category-header">
+            <i class="fa-solid fa-faucet-drip" style="font-size:1.5rem; color:var(--secondary);"></i>
+            <h3>Hydration & Food</h3>
+          </div>
+          <div class="kit-items-list">
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Emergency Water (3 Gallons)</span>
+              </label>
+            </div>
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Non-Perishable Food Supply</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Basic Tools & Lighting -->
+        <div class="kit-category-card glass-panel" style="border-color: var(--border-glass) !important;">
+          <div class="kit-category-header">
+            <i class="fa-solid fa-toolbox" style="font-size:1.5rem; color:var(--accent);"></i>
+            <h3>Tools & Lighting</h3>
+          </div>
+          <div class="kit-items-list">
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Flashlight & Extra Batteries</span>
+              </label>
+            </div>
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Hand-Crank Warning Radio</span>
+              </label>
+            </div>
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>High-Capacity Power Bank</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Medical & Safety -->
+        <div class="kit-category-card glass-panel">
+          <div class="kit-category-header">
+            <i class="fa-solid fa-kit-medical" style="font-size:1.5rem; color:var(--secondary);"></i>
+            <h3>Medical & Safety</h3>
+          </div>
+          <div class="kit-items-list">
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>First Aid Kit Supplies</span>
+              </label>
+            </div>
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Rescue Whistle Tool</span>
+              </label>
+            </div>
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Thermal Space Blankets</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Hygiene & Records -->
+        <div class="kit-category-card glass-panel" style="border-color: var(--border-glass) !important;">
+          <div class="kit-category-header">
+            <i class="fa-solid fa-folder-open" style="font-size:1.5rem; color:var(--accent);"></i>
+            <h3>Hygiene & Records</h3>
+          </div>
+          <div class="kit-items-list">
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Personal Hygiene Items</span>
+              </label>
+            </div>
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Waterproof Documents Pack</span>
+              </label>
+            </div>
+            <div class="kit-item-checkbox">
+              <label>
+                <input type="checkbox">
+                <span>Emergency Cash Reserves</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column: sticky progress box -->
+      <div>
+        <img src="images/family-supplies.jpg" alt="Family preparing emergency supplies" style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-glass); margin-bottom: 20px;">
+        <div class="kit-summary-sticky glass-panel" style="padding: 30px;">
+          <h3 class="text-center" style="margin-bottom: 20px;">Kit Assembly Status</h3>
+          <div class="kit-score-circle">
+            <span class="kit-score-number">0%</span>
+            <span class="kit-score-label">Prepared</span>
+          </div>
+          <div class="kit-checklist-summary">
+            <div class="kit-summary-item">
+              <span>Items Packed:</span>
+              <span class="kit-summary-count">0 / 11 Items</span>
+            </div>
+            <div class="kit-summary-item">
+              <span>Survival Rating:</span>
+              <span class="kit-summary-status" style="color: var(--accent);">Vulnerable</span>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px; line-height:1.5;" class="text-center">Items checked here synchronize with your dashboard score automatically.</p>
+          <a href="user-dashboard.html" class="btn btn-primary" style="width: 100%;">View Dashboard Status</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Mobilizing rapid rescue coordination, survival resources, food security calculators, and community resilience blueprints for safety zones.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="disaster-types.html">Disaster Types</a>
+          <a href="preparedness-guides.html">Preparedness Guides</a>
+          <a href="resources.html">Resources Library</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Coordinates</a>
+          <a href="404.html">Terms & Agreements</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="newsletter-desc">Get quarterly emergency updates, volunteer alerts, and relief operations reports.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); window.showCustomAlert('Subscribed successfully to SafeAlert Newsletter!', 'success');">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly. All rights reserved. Designed for emergency relief.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Security Audits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

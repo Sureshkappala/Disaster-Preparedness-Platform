@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - SafeAlert Command</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--primary);">
+
+  <!-- MOBILE TOGGLE HEADER -->
+  <div class="db-mobile-header">
+    <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+    <a href="admin-dashboard.html" class="db-mobile-logo" style="text-decoration: none;">
+      <div class="logo" style="pointer-events: none;">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </div>
+    </a>
+    <div class="db-mobile-avatar user-avatar" style="background-color: var(--accent);">AD</div>
+  </div>
+  
+  <!-- Sidebar Backdrop Overlay -->
+  <div class="db-sidebar-overlay"></div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="db-container">
+    
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside class="db-sidebar">
+      <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="overflow-y: auto; height: 100%; display: flex; flex-direction: column;">
+        <a href="admin-dashboard.html" class="sidebar-logo" style="text-decoration: none;">
+          <div class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </div>
+        </a>
+        
+        <!-- Group 1: Safety Command -->
+        <div class="sidebar-section-title">Command Control</div>
+        <nav class="sidebar-menu">
+          <a href="admin-dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Safety Control Board</a>
+          <a href="db-admin-blueprints.html" class="sidebar-link"><i class="fa-solid fa-book-bookmark"></i> Drill Blueprints</a>
+          <a href="db-admin-dispatch.html" class="sidebar-link active"><i class="fa-solid fa-bullhorn"></i> Dispatch Warnings</a>
+        </nav>
+
+        <!-- Group 2: Agency Oversight -->
+        <div class="sidebar-section-title">Oversight</div>
+        <nav class="sidebar-menu">
+          <a href="db-admin-threats.html" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> Active Threat Zones</a>
+          <a href="db-admin-cert.html" class="sidebar-link"><i class="fa-solid fa-users"></i> CERT Networks</a>
+        </nav>
+
+        <!-- Logout -->
+        <div class="sidebar-logout">
+          <a href="login.html" class="sidebar-link" onclick="localStorage.clear();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT DISPLAY -->
+    <main class="dashboard-content">
+            <!-- DESKTOP TOP BAR -->
+      <div class="dashboard-header">
+        <div>
+          <span class="badge badge-alert">Command Control Dashboard</span>
+          <h1>Dispatch Warnings</h1>
+        </div>
+        <div class="dashboard-user-bar">
+          <button class="notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge"></span>
+          </button>
+          <div class="user-profile-menu">
+            <div class="user-avatar">SA</div>
+            <div class="user-details">
+              <span class="user-name">SAFETY OFFICER</span>
+              <span class="user-role">CERT Coordinator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="kit-builder-layout reveal">
+        <div class="form-card glass-panel" style="padding: 30px; border-radius: var(--radius-md);">
+          <h2 style="margin-bottom: 20px;">Active Emergency Broadcast</h2>
+          <form id="warningForm" onsubmit="event.preventDefault(); window.showCustomAlert('Broadcast sent successfully to all warning nodes!', 'success'); this.reset();">
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="broadcastArea">Target Warning Area/Zone *</label>
+              <input type="text" id="broadcastArea" placeholder="e.g. Sector B-5 Ridge Line" required style="background: #070d1e; border-color: var(--border-glass); width: 100%;">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="alertSeverity">Alert Severity Level *</label>
+              <select id="alertSeverity" required style="background: #070d1e; border-color: var(--border-glass); width: 100%;">
+                <option value="" disabled selected>Select level...</option>
+                <option value="info">Info Advisory</option>
+                <option value="watch">Severe Watch</option>
+                <option value="evac">Immediate Evacuation</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="broadcastMessage">Broadcast Alert Message *</label>
+              <textarea id="broadcastMessage" rows="5" placeholder="Type warning alert text broadcast here..." required style="background: #070d1e; border-color: var(--border-glass); width: 100%;"></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%; background-color: var(--danger); color: #fff; font-weight:700;">Dispatch Broadcast Alert</button>
+          </form>
+        </div>
+        <div>
+          <div class="info-box glass-panel" style="padding: 30px; border-radius: var(--radius-md);">
+            <h3>Warning Protocols</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-top: 10px;">Alerts dispatched from this desk automatically broadcast to all household dashboards and trigger municipal sirens in target sectors.</p>
+          </div>
+        </div>
+      </div>
+      </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

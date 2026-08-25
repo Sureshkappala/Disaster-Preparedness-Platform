@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - SafeAlert</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--primary);">
+
+  <!-- MOBILE TOGGLE HEADER -->
+  <div class="db-mobile-header">
+    <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+    <a href="user-dashboard.html" class="db-mobile-logo" style="text-decoration: none;">
+      <div class="logo" style="pointer-events: none;">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </div>
+    </a>
+    <div class="db-mobile-avatar user-avatar">US</div>
+  </div>
+  
+  <!-- Sidebar Backdrop Overlay -->
+  <div class="db-sidebar-overlay"></div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="db-container">
+    
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside class="db-sidebar">
+      <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="overflow-y: auto; height: 100%; display: flex; flex-direction: column;">
+        <a href="user-dashboard.html" class="sidebar-logo" style="text-decoration: none;">
+          <div class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </div>
+        </a>
+        
+        <!-- Group 1: General Safety -->
+        <div class="sidebar-section-title">Household Safety</div>
+        <nav class="sidebar-menu">
+          <a href="user-dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+          <a href="db-user-kit.html" class="sidebar-link"><i class="fa-solid fa-toolbox"></i> Supply Kit Builder</a>
+          <a href="db-user-plan.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Evacuation Plan</a>
+        </nav>
+
+        <!-- Group 2: Library & Help -->
+        <div class="sidebar-section-title">Resources</div>
+        <nav class="sidebar-menu">
+          <a href="db-user-protocols.html" class="sidebar-link active"><i class="fa-solid fa-triangle-exclamation"></i> Emergency Protocols</a>
+          <a href="db-user-blueprints.html" class="sidebar-link"><i class="fa-solid fa-school-flag"></i> Safety Blueprints</a>
+          <a href="db-user-library.html" class="sidebar-link"><i class="fa-solid fa-book-bookmark"></i> Education Library</a>
+        </nav>
+
+        <!-- Logout -->
+        <div class="sidebar-logout">
+          <a href="login.html" class="sidebar-link" onclick="localStorage.clear();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT DISPLAY -->
+    <main class="dashboard-content">
+            <!-- DESKTOP TOP BAR -->
+      <div class="dashboard-header">
+        <div>
+          <span class="badge badge-alert">Household Dashboard</span>
+          <h1>Emergency Protocols</h1>
+        </div>
+        <div class="dashboard-user-bar">
+          <button class="notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge"></span>
+          </button>
+          <div class="user-profile-menu">
+            <div class="user-avatar">US</div>
+            <div class="user-details">
+              <span class="user-name">USER ACCOUNT</span>
+              <span class="user-role">Household Rep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="disaster-detail-grid reveal" style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+        <div class="disaster-protocol-card glass-panel" style="padding: 30px; border-radius: var(--radius-md);">
+          <h3>Flood Protocol</h3>
+          <ul class="tip-list" style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+            <li class="tip-item" style="display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color:var(--secondary);"></i> <p style="color: #cbd5e1 !important;">Move to higher ground immediately if flash flooding warnings are issued.</p></li>
+            <li class="tip-item" style="display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color:var(--secondary);"></i> <p style="color: #cbd5e1 !important;">Do not attempt to wade or drive through moving floodwaters.</p></li>
+          </ul>
+        </div>
+        <div class="disaster-protocol-card glass-panel" style="padding: 30px; border-radius: var(--radius-md); border-color: var(--border-glass) !important;">
+          <h3>Cyclone Protocol</h3>
+          <ul class="tip-list" style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+            <li class="tip-item" style="display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color:var(--secondary);"></i> <p style="color: #cbd5e1 !important;">Secure external shutters, latch loose items, and shelter in interior rooms.</p></li>
+          </ul>
+        </div>
+      </div>
+      </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

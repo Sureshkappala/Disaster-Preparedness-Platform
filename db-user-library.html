@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - SafeAlert</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--primary);">
+
+  <!-- MOBILE TOGGLE HEADER -->
+  <div class="db-mobile-header">
+    <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+    <a href="user-dashboard.html" class="db-mobile-logo" style="text-decoration: none;">
+      <div class="logo" style="pointer-events: none;">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </div>
+    </a>
+    <div class="db-mobile-avatar user-avatar">US</div>
+  </div>
+  
+  <!-- Sidebar Backdrop Overlay -->
+  <div class="db-sidebar-overlay"></div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="db-container">
+    
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside class="db-sidebar">
+      <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="overflow-y: auto; height: 100%; display: flex; flex-direction: column;">
+        <a href="user-dashboard.html" class="sidebar-logo" style="text-decoration: none;">
+          <div class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </div>
+        </a>
+        
+        <!-- Group 1: General Safety -->
+        <div class="sidebar-section-title">Household Safety</div>
+        <nav class="sidebar-menu">
+          <a href="user-dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+          <a href="db-user-kit.html" class="sidebar-link"><i class="fa-solid fa-toolbox"></i> Supply Kit Builder</a>
+          <a href="db-user-plan.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Evacuation Plan</a>
+        </nav>
+
+        <!-- Group 2: Library & Help -->
+        <div class="sidebar-section-title">Resources</div>
+        <nav class="sidebar-menu">
+          <a href="db-user-protocols.html" class="sidebar-link"><i class="fa-solid fa-triangle-exclamation"></i> Emergency Protocols</a>
+          <a href="db-user-blueprints.html" class="sidebar-link"><i class="fa-solid fa-school-flag"></i> Safety Blueprints</a>
+          <a href="db-user-library.html" class="sidebar-link active"><i class="fa-solid fa-book-bookmark"></i> Education Library</a>
+        </nav>
+
+        <!-- Logout -->
+        <div class="sidebar-logout">
+          <a href="login.html" class="sidebar-link" onclick="localStorage.clear();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT DISPLAY -->
+    <main class="dashboard-content">
+            <!-- DESKTOP TOP BAR -->
+      <div class="dashboard-header">
+        <div>
+          <span class="badge badge-alert">Household Dashboard</span>
+          <h1>Education Library</h1>
+        </div>
+        <div class="dashboard-user-bar">
+          <button class="notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge"></span>
+          </button>
+          <div class="user-profile-menu">
+            <div class="user-avatar">US</div>
+            <div class="user-details">
+              <span class="user-name">USER ACCOUNT</span>
+              <span class="user-role">Household Rep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resources-grid reveal-stagger" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <div class="resource-card glass-panel" style="padding: 24px; border-radius: var(--radius-md);">
+          <span class="badge" style="background: rgba(16, 185, 129, 0.1); color: var(--secondary); margin-bottom: 10px; display: inline-block;">Video</span>
+          <h4>Understanding Shelter Openings</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-top: 5px;">Learn how public evacuation points coordinate operations during weather warnings.</p>
+        </div>
+        <div class="resource-card glass-panel" style="padding: 24px; border-radius: var(--radius-md); border-color: var(--border-glass) !important;">
+          <span class="badge" style="background: rgba(249, 115, 22, 0.1); color: var(--accent); margin-bottom: 10px; display: inline-block;">Manual</span>
+          <h4>72-Hour Food Storage Rules</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-top: 5px;">Official nutritional guidelines for long-shelf emergency food stores.</p>
+        </div>
+      </div>
+      </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

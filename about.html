@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - SafeAlert Preparedness</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- FIXED/STICKY HEADER & NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search resources..." onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="disaster-types.html">Disaster Types</a></li>
+          <li><a href="preparedness-guides.html">Preparedness Guides</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Prepared</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-SAFE</p>
+          <p><i class="fa-solid fa-envelope"></i> support@safealert.org</p>
+          <p><i class="fa-solid fa-location-dot"></i> 100 Safety Boulevard, Washington D.C.</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Prepared</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header reveal">
+    <div class="container">
+      <span class="badge">Who We Are</span>
+      <h1>About Our Platform</h1>
+      <p>Building local capacity and regional safety infrastructure to face sudden natural emergencies.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 1: ABOUT THE PLATFORM -->
+  <section class="section">
+    <div class="container grid-about reveal">
+      <div>
+        <span class="badge">SafeAlert Mission</span>
+        <h2>Empowering Individuals and Communities</h2>
+        <p>SafeAlert is a modern, non-profit digital gateway designed to remove barriers to disaster planning. We believe that emergency preparation shouldn't be confusing or require expensive equipment. By providing free, interactive checklist planners, standardized emergency kit guides, and community check-in trackers, we help households reduce risk before crisis alerts are sounded.</p>
+        <p style="margin-top: 15px; color: var(--text-muted);">We partner with meteorological researchers, disaster response groups, and community volunteers to maintain accurate, up-to-date regional emergency guidelines.</p>
+      </div>
+      <div>
+        <img src="images/family-kit.jpg" alt="Family preparing emergency kit" style="width:100%; max-width:400px; border: 1px solid var(--border-glass); border-radius: var(--radius-md);">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: MISSION & VISION -->
+  <section class="section section-light"><div class="container reveal">
+      <div class="section-title-wrap">
+        <h2>Our Direction & Values</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">A structured approach to making emergency information transparent and simple.</p>
+      </div>
+      <div class="grid-mission">
+        <!-- Mission -->
+        <div class="mission-card glass-card" style="background:#070d1e; color:#fff; border-color:var(--border-glass) !important;">
+          <div class="mission-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Our Mission</h3>
+          <p style="color: var(--text-muted);">Help individuals, families, and neighborhood networks become structurally prepared for emergencies through clear, interactive guides and templates.</p>
+        </div>
+        <!-- Vision -->
+        <div class="mission-card glass-card" style="background:#070d1e; color:#fff; border-color:var(--border-glass) !important;">
+          <div class="mission-icon">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3>Our Vision</h3>
+          <p style="color: var(--text-muted);">Establish fully informed, resilient communities where every household possesses a 72-hour survival kit and a clear evacuation route plan.</p>
+        </div>
+        <!-- Why Preparedness Matters -->
+        <div class="mission-card glass-card" style="background:#070d1e; color:#fff; border-color:var(--border-glass) !important;">
+          <div class="mission-icon">
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </div>
+          <h3>Why It Matters</h3>
+          <p style="color: var(--text-muted);">Early preparation drastically mitigates stress, minimizes injuries, and frees up critical resources for emergency teams to handle complex rescue cases.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: OUR APPROACH -->
+  <section class="section"><div class="container reveal">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">SafeAlert Framework</span>
+        <h2>Our Approach</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">Five vital pillars that shape how we prepare communities for natural hazards.</p>
+      </div>
+      
+      <div class="timeline">
+        <!-- Pillar 1 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">A</div>
+          <div class="timeline-content">
+            <h3>1. Awareness</h3>
+            <p>Providing clear info regarding floods, storms, and earthquakes. Knowing the regional risk profiles helps households focus preparation on real threats.</p>
+          </div>
+        </div>
+        <!-- Pillar 2 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">P</div>
+          <div class="timeline-content">
+            <h3>2. Planning</h3>
+            <p>Offering interactive evacuation routes and communication forms. Planning prevents structural panic and keeps group contacts synchronized.</p>
+          </div>
+        </div>
+        <!-- Pillar 3 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">P</div>
+          <div class="timeline-content">
+            <h3>3. Preparation</h3>
+            <p>Guiding the assembly of emergency supplies like water, lighting, and first aid. Proper materials guarantee self-sufficiency for 72 hours.</p>
+          </div>
+        </div>
+        <!-- Pillar 4 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">C</div>
+          <div class="timeline-content">
+            <h3>4. Communication</h3>
+            <p>Ensuring out-of-town check-in routes and municipal alert lines are active. Structured lines prevent false alarms and ease mental stress.</p>
+          </div>
+        </div>
+        <!-- Pillar 5 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">C</div>
+          <div class="timeline-content">
+            <h3>5. Community Readiness</h3>
+            <p>Connecting neighborhoods to share equipment, run safety exercises, and verify the safety of elderly or vulnerable citizens.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: COMMUNITY VOLUNTEER NETWORK -->
+  <section class="section">
+    <div class="container grid-about reveal">
+      <div>
+        <img src="images/family-gathering.jpg" alt="Platform volunteers organizing preparedness materials" style="width:100%; max-width:400px; border: 1px solid var(--border-glass); border-radius: var(--radius-md);">
+      </div>
+      <div>
+        <span class="badge">SafeAlert Network</span>
+        <h2>Neighborhood Volunteer Coordination</h2>
+        <p>Real safety occurs when community members support each other. SafeAlert provides tools for local volunteers, safety coordinators, and neighborhood leaders to organize evacuation maps, share communication trees, and manage communal supply caches.</p>
+        <p style="margin-top: 15px; color: var(--text-muted);">Through local coordinator profiles, users can register as active volunteers, offering assistance to elderly neighbors or families requiring medical logistics during storms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: EMERGENCY SUPPLIES STRATEGY -->
+  <section class="section section-light" style="border-top:1px solid rgba(255,255,255,0.05);">
+    <div class="container grid-about reveal" style="grid-template-columns: 0.8fr 1.2fr;">
+      <div>
+        <span class="badge">Data-Driven Preparation</span>
+        <h2>Standardizing Supply Calculations</h2>
+        <p>A primary failure in crisis preparedness is incorrect supply sizing. Households frequently store expiring foods or insufficient water volumes. SafeAlert implements standardized FEMA and Red Cross calculation tools to evaluate hydration, medical, and nutritional requirements for up to 72 hours based on family size.</p>
+        <p style="margin-top: 15px; color: var(--text-muted);">Our tools calculate calorie intakes, sanitation fluid weights, and battery counts automatically, syncing checklist progress directly to user control panels.</p>
+      </div>
+      <div>
+        <img src="images/family-supplies.jpg" alt="Family packing hydration and supplies packs" style="width:100%; max-width:400px; border: 1px solid var(--border-glass); border-radius: var(--radius-md); display: block; margin: 0 auto;">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: PARTNERS -->
+  <section class="section section-light" style="border-top: 1px solid rgba(255,255,255,0.05);"><div class="container reveal">
+      <div class="section-title-wrap">
+        <h2>Our Safety Partners</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">SafeAlert works alongside leading emergency response networks to ensure accurate advisory feeds.</p>
+      </div>
+      <div class="partners-row">
+        <div class="partner-logo"><i class="fa-solid fa-cross"></i> Red Cross Assoc</div>
+        <div class="partner-logo"><i class="fa-solid fa-house-chimney-window"></i> FEMA Network</div>
+        <div class="partner-logo"><i class="fa-solid fa-bolt-lightning"></i> Weather Agency</div>
+        <div class="partner-logo"><i class="fa-solid fa-heart-pulse"></i> Health Alliance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Mobilizing rapid rescue coordination, survival resources, food security calculators, and community resilience blueprints for safety zones.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="disaster-types.html">Disaster Types</a>
+          <a href="preparedness-guides.html">Preparedness Guides</a>
+          <a href="resources.html">Resources Library</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Coordinates</a>
+          <a href="404.html">Terms & Agreements</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="newsletter-desc">Get quarterly emergency updates, volunteer alerts, and relief operations reports.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); window.showCustomAlert('Subscribed successfully to SafeAlert Newsletter!', 'success');">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly. All rights reserved. Designed for emergency relief.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Security Audits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

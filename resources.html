@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Library - Disaster Mitigation & Safety</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- FIXED/STICKY HEADER & NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search resources..." onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="disaster-types.html">Disaster Types</a></li>
+          <li><a href="preparedness-guides.html">Preparedness Guides</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Prepared</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-SAFE</p>
+          <p><i class="fa-solid fa-envelope"></i> support@safealert.org</p>
+          <p><i class="fa-solid fa-location-dot"></i> 100 Safety Boulevard, Washington D.C.</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Prepared</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header reveal">
+    <div class="container">
+      <span class="badge">Safety Knowledge Base</span>
+      <h1>Resource Library</h1>
+      <p>Filter articles, checklists, and guides to find essential safety information.</p>
+    </div>
+  </div>
+
+  <!-- RESOURCES INTERACTIVE AREA -->
+  <section class="section"><div class="container reveal">
+      
+      <!-- Search & Category Filters -->
+      <div class="resources-filter-bar">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="resourceSearch" class="search-input" placeholder="Search guides, kits, tips...">
+        </div>
+        <div class="filter-chips">
+          <button class="filter-chip active" data-filter="all">All Resources</button>
+          <button class="filter-chip" data-filter="guides">Safety Guides</button>
+          <button class="filter-chip" data-filter="checklists">Checklists</button>
+          <button class="filter-chip" data-filter="planning">Planning Guides</button>
+          <button class="filter-chip" data-filter="articles">Awareness Articles</button>
+          <button class="filter-chip" data-filter="tips">Preparedness Tips</button>
+          <button class="filter-chip" data-filter="downloads">Downloadables</button>
+        </div>
+      </div>
+
+      <!-- Resource Cards Grid -->
+      <div class="resources-grid reveal-stagger">
+        
+        <!-- Card 1 -->
+        <div class="resource-card glass-panel" data-category="guides">
+          <div class="resource-meta">
+            <span class="resource-tag">Safety Guides</span>
+            <span>6 min read</span>
+          </div>
+          <h3 style="margin-top: 15px;">Household Flash Flood Relocation</h3>
+          <p>A step-by-step blueprint on identifying local high elevations, mapping escape roads, and relocating safely when flash flood warnings sound.</p>
+          <a href="disaster-types.html?tab=flood" class="btn-link" style="color:var(--secondary); font-weight:600; margin-top:auto;">Read Guide &rarr;</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="resource-card glass-panel" data-category="checklists" style="border-color: var(--border-glass) !important;">
+          <div class="resource-meta">
+            <span class="resource-tag" style="color: var(--accent);">Checklists</span>
+            <span>4 min read</span>
+          </div>
+          <h3 style="margin-top: 15px;">The 72-Hour Supply Audit Checklist</h3>
+          <p>A structured checklist audit to ensure your household food, water, medical reserves, and backup batteries are rotated and unexpired.</p>
+          <a href="emergency-kit.html" class="btn-link" style="color:var(--secondary); font-weight:600; margin-top:auto;">Open Checklist &rarr;</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="resource-card glass-panel" data-category="planning">
+          <div class="resource-meta">
+            <span class="resource-tag">Planning Guides</span>
+            <span>8 min read</span>
+          </div>
+          <h3 style="margin-top: 15px;">Neighborhood Emergency Trees</h3>
+          <p>How to construct neighborhood contact check-in trees and divide safety roles among community block members during regional crises.</p>
+          <a href="preparedness-guides.html" class="btn-link" style="color:var(--secondary); font-weight:600; margin-top:auto;">View Template &rarr;</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="resource-card glass-panel" data-category="articles" style="border-color: var(--border-glass) !important;">
+          <div class="resource-meta">
+            <span class="resource-tag" style="color: var(--accent);">Awareness Articles</span>
+            <span>10 min read</span>
+          </div>
+          <h3 style="margin-top: 15px;">Understanding Storm Surge Hazards</h3>
+          <p>An educational look at how cyclones push oceanic storm surges inland, explaining structural risks and why low-lying zones must evacuate.</p>
+          <a href="disaster-types.html?tab=cyclone" class="btn-link" style="color:var(--secondary); font-weight:600; margin-top:auto;">Read Article &rarr;</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="resource-card glass-panel" data-category="tips">
+          <div class="resource-meta">
+            <span class="resource-tag">Preparedness Tips</span>
+            <span>5 min read</span>
+          </div>
+          <h3 style="margin-top: 15px;">Backup Solar Power Setup Tips</h3>
+          <p>Quick tips on calculating solar battery capacity, identifying device loads, and keeping emergency communication batteries charged during grid downs.</p>
+          <a href="index.html#disasters" class="btn-link" style="color:var(--secondary); font-weight:600; margin-top:auto;">Read Tips &rarr;</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="resource-card glass-panel" data-category="downloads" style="border-color: var(--border-glass) !important;">
+          <div class="resource-meta">
+            <span class="resource-tag" style="color: var(--accent);">Downloadables</span>
+            <span>2.4 MB PDF</span>
+          </div>
+          <h3 style="margin-top: 15px;">Printable Emergency Card Template</h3>
+          <p>A printable card template to write out primary phone numbers, blood types, assembly zones, and meeting locations to keep in family wallets.</p>
+          <a href="emergency-plan.html" class="btn-link" style="color:var(--secondary); font-weight:600; margin-top:auto;">Get Template &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Mobilizing rapid rescue coordination, survival resources, food security calculators, and community resilience blueprints for safety zones.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="disaster-types.html">Disaster Types</a>
+          <a href="preparedness-guides.html">Preparedness Guides</a>
+          <a href="resources.html">Resources Library</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Coordinates</a>
+          <a href="404.html">Terms & Agreements</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="newsletter-desc">Get quarterly emergency updates, volunteer alerts, and relief operations reports.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); window.showCustomAlert('Subscribed successfully to SafeAlert Newsletter!', 'success');">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly. All rights reserved. Designed for emergency relief.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Security Audits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

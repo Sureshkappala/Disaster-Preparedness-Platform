@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - SafeAlert</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--primary);">
+
+  <!-- MOBILE TOGGLE HEADER -->
+  <div class="db-mobile-header">
+    <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+    <a href="user-dashboard.html" class="db-mobile-logo" style="text-decoration: none;">
+      <div class="logo" style="pointer-events: none;">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </div>
+    </a>
+    <div class="db-mobile-avatar user-avatar">US</div>
+  </div>
+  
+  <!-- Sidebar Backdrop Overlay -->
+  <div class="db-sidebar-overlay"></div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="db-container">
+    
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside class="db-sidebar">
+      <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="overflow-y: auto; height: 100%; display: flex; flex-direction: column;">
+        <a href="user-dashboard.html" class="sidebar-logo" style="text-decoration: none;">
+          <div class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </div>
+        </a>
+        
+        <!-- Group 1: General Safety -->
+        <div class="sidebar-section-title">Household Safety</div>
+        <nav class="sidebar-menu">
+          <a href="user-dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+          <a href="db-user-kit.html" class="sidebar-link"><i class="fa-solid fa-toolbox"></i> Supply Kit Builder</a>
+          <a href="db-user-plan.html" class="sidebar-link active"><i class="fa-solid fa-map-location-dot"></i> Evacuation Plan</a>
+        </nav>
+
+        <!-- Group 2: Library & Help -->
+        <div class="sidebar-section-title">Resources</div>
+        <nav class="sidebar-menu">
+          <a href="db-user-protocols.html" class="sidebar-link"><i class="fa-solid fa-triangle-exclamation"></i> Emergency Protocols</a>
+          <a href="db-user-blueprints.html" class="sidebar-link"><i class="fa-solid fa-school-flag"></i> Safety Blueprints</a>
+          <a href="db-user-library.html" class="sidebar-link"><i class="fa-solid fa-book-bookmark"></i> Education Library</a>
+        </nav>
+
+        <!-- Logout -->
+        <div class="sidebar-logout">
+          <a href="login.html" class="sidebar-link" onclick="localStorage.clear();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT DISPLAY -->
+    <main class="dashboard-content">
+            <!-- DESKTOP TOP BAR -->
+      <div class="dashboard-header">
+        <div>
+          <span class="badge badge-alert">Household Dashboard</span>
+          <h1>Evacuation Plan</h1>
+        </div>
+        <div class="dashboard-user-bar">
+          <button class="notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge"></span>
+          </button>
+          <div class="user-profile-menu">
+            <div class="user-avatar">US</div>
+            <div class="user-details">
+              <span class="user-name">USER ACCOUNT</span>
+              <span class="user-role">Household Rep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="kit-builder-layout reveal">
+        <div class="form-card glass-panel" style="padding: 30px; border-radius: var(--radius-md);">
+          <form id="emergencyPlanForm" data-validate novalidate onsubmit="event.preventDefault(); window.showCustomAlert('Evacuation Plan saved successfully!', 'success');">
+            <div class="form-group-row" style="margin-bottom: 20px;">
+              <div class="form-group">
+                <label for="planName">Full Name *</label>
+                <input type="text" id="planName" placeholder="John Doe" required style="background: #070d1e; border-color: var(--border-glass); width: 100%;">
+              </div>
+              <div class="form-group">
+                <label for="planGroupName">Family / Group Name *</label>
+                <input type="text" id="planGroupName" placeholder="The Doe Family" required style="background: #070d1e; border-color: var(--border-glass); width: 100%;">
+              </div>
+            </div>
+            <div class="form-group-row" style="margin-bottom: 20px;">
+              <div class="form-group">
+                <label for="planContact">Primary Emergency Contact *</label>
+                <input type="tel" id="planContact" placeholder="5551234567" required style="background: #070d1e; border-color: var(--border-glass); width: 100%;">
+              </div>
+              <div class="form-group">
+                <label for="planSecondaryContact">Secondary Out-of-Town Contact *</label>
+                <input type="tel" id="planSecondaryContact" placeholder="5559876543" required style="background: #070d1e; border-color: var(--border-glass); width: 100%;">
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="planMeetingPoint">Neighborhood Meeting Point *</label>
+              <input type="text" id="planMeetingPoint" placeholder="Municipal Park" required style="background: #070d1e; border-color: var(--border-glass); width: 100%;">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="planEvacuation">Designated Evacuation Shelter *</label>
+              <input type="text" id="planEvacuation" placeholder="Community Center Gym" required style="background: #070d1e; border-color: var(--border-glass); width: 100%;">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Save Emergency Plan & Generate PDF</button>
+          </form>
+        </div>
+        <div>
+          <div class="info-box glass-panel" style="padding: 30px; border-radius: var(--radius-md);">
+            <h3>Plan Mapping Advice</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-top: 10px;">Define clear evacuation routes. Your household coordinator should distribute physical copies of these contact cards to all family members.</p>
+          </div>
+        </div>
+      </div>
+      </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

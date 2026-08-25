@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - STACKLY</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 2rem 1rem; background-color: var(--primary);">
+
+
+  <!-- 404 CONTAINER -->
+  <div style="width: 100%; max-width: 480px; margin: auto; text-align: center;">
+    <div class="glass-card" style="padding: 3rem 2.25rem; border: 1.5px solid var(--border-glass) !important; box-shadow: var(--shadow-lg);">
+      
+      <!-- ICON -->
+      <div style="margin-bottom: 2rem;">
+        <i class="fa-solid fa-triangle-exclamation" style="font-size: 4.5rem; color: var(--accent); animation: pulse 2s infinite;"></i>
+      </div>
+
+      <!-- HEADING -->
+      <h1 style="font-size: 3rem; margin-bottom: 0.5rem; font-family: var(--font-heading); font-weight: 800; color: var(--text-white);">404</h1>
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; font-family: var(--font-heading); font-weight: 700; color: var(--text-white);">Threat Map Interrupted</h2>
+      <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">The safety resources or coordinator portal page you are searching for has moved, evacuated, or is temporarily offline.</p>
+
+      <!-- BUTTONS ROW -->
+      <div style="display: flex; gap: 12px; margin-top: 1.5rem;">
+        <button onclick="window.history.back();" class="btn" style="flex: 1; font-weight: 700; border-radius: var(--radius-sm); border: 1px solid var(--secondary); background: transparent; color: var(--secondary) !important; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
+          <i class="fa-solid fa-arrow-left"></i> Go Back
+        </button>
+        <a href="index.html" class="btn btn-primary" style="flex: 1; font-weight: 700; border-radius: var(--radius-sm); border: none; background: var(--accent) !important; color: #fff !important; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; text-shadow: none;">
+          <i class="fa-solid fa-house"></i> Back to Home
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

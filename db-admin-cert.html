@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - SafeAlert Command</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--primary);">
+
+  <!-- MOBILE TOGGLE HEADER -->
+  <div class="db-mobile-header">
+    <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+    <a href="admin-dashboard.html" class="db-mobile-logo" style="text-decoration: none;">
+      <div class="logo" style="pointer-events: none;">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </div>
+    </a>
+    <div class="db-mobile-avatar user-avatar" style="background-color: var(--accent);">AD</div>
+  </div>
+  
+  <!-- Sidebar Backdrop Overlay -->
+  <div class="db-sidebar-overlay"></div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="db-container">
+    
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside class="db-sidebar">
+      <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="overflow-y: auto; height: 100%; display: flex; flex-direction: column;">
+        <a href="admin-dashboard.html" class="sidebar-logo" style="text-decoration: none;">
+          <div class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </div>
+        </a>
+        
+        <!-- Group 1: Safety Command -->
+        <div class="sidebar-section-title">Command Control</div>
+        <nav class="sidebar-menu">
+          <a href="admin-dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Safety Control Board</a>
+          <a href="db-admin-blueprints.html" class="sidebar-link"><i class="fa-solid fa-book-bookmark"></i> Drill Blueprints</a>
+          <a href="db-admin-dispatch.html" class="sidebar-link"><i class="fa-solid fa-bullhorn"></i> Dispatch Warnings</a>
+        </nav>
+
+        <!-- Group 2: Agency Oversight -->
+        <div class="sidebar-section-title">Oversight</div>
+        <nav class="sidebar-menu">
+          <a href="db-admin-threats.html" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> Active Threat Zones</a>
+          <a href="db-admin-cert.html" class="sidebar-link active"><i class="fa-solid fa-users"></i> CERT Networks</a>
+        </nav>
+
+        <!-- Logout -->
+        <div class="sidebar-logout">
+          <a href="login.html" class="sidebar-link" onclick="localStorage.clear();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT DISPLAY -->
+    <main class="dashboard-content">
+            <!-- DESKTOP TOP BAR -->
+      <div class="dashboard-header">
+        <div>
+          <span class="badge badge-alert">Command Control Dashboard</span>
+          <h1>CERT Networks</h1>
+        </div>
+        <div class="dashboard-user-bar">
+          <button class="notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge"></span>
+          </button>
+          <div class="user-profile-menu">
+            <div class="user-avatar">SA</div>
+            <div class="user-details">
+              <span class="user-name">SAFETY OFFICER</span>
+              <span class="user-role">CERT Coordinator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="db-panel reveal" style="padding: 30px; border-radius: var(--radius-md);">
+        <div class="db-panel-header" style="margin-bottom: 20px;">
+          <h2>Active Volunteer CERT Networks Directory</h2>
+        </div>
+        <div class="table-responsive">
+          <table class="db-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                <th style="padding: 12px;">Unit Name</th>
+                <th style="padding: 12px;">Primary Sector</th>
+                <th style="padding: 12px;">Unit Head</th>
+                <th style="padding: 12px;">Contact Coordinate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 12px; color:#fff; font-weight:600;">CERT Unit 12 (Downtown)</td>
+                <td style="padding: 12px;">Sector A-1, A-2</td>
+                <td style="padding: 12px;">Sarah Jenkins</td>
+                <td style="padding: 12px;">+1 (800) 555-CERT-12</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <td style="padding: 12px; color:#fff; font-weight:600;">CERT Unit 05 (Valley)</td>
+                <td style="padding: 12px;">Sector B-4, B-5</td>
+                <td style="padding: 12px;">Robert Chen</td>
+                <td style="padding: 12px;">+1 (800) 555-CERT-05</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

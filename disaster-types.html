@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disaster Types - Emergency Protocols</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- FIXED/STICKY HEADER & NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search resources..." onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="disaster-types.html" class="active">Disaster Types</a></li>
+          <li><a href="preparedness-guides.html">Preparedness Guides</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Prepared</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-SAFE</p>
+          <p><i class="fa-solid fa-envelope"></i> support@safealert.org</p>
+          <p><i class="fa-solid fa-location-dot"></i> 100 Safety Boulevard, Washington D.C.</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Prepared</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header reveal">
+    <div class="container">
+      <span class="badge">Immediate Response Directory</span>
+      <h1>Emergency Action Protocols</h1>
+      <p>Expert-approved safety steps to take before, during, and after major disaster situations.</p>
+    </div>
+  </div>
+
+  <!-- DISASTER TABS BUTTONS -->
+  <section class="section"><div class="container reveal">
+      <div class="disaster-tabs">
+        <button class="tab-btn active" data-target="flood-panel">Flood</button>
+        <button class="tab-btn" data-target="cyclone-panel">Cyclone</button>
+        <button class="tab-btn" data-target="earthquake-panel">Earthquake</button>
+        <button class="tab-btn" data-target="fire-panel">Fire</button>
+        <button class="tab-btn" data-target="storm-panel">Storm</button>
+        <button class="tab-btn" data-target="heatwave-panel">Heatwave</button>
+        <button class="tab-btn" data-target="landslide-panel">Landslide</button>
+        <button class="tab-btn" data-target="extreme-weather-panel">Extreme Weather</button>
+      </div>
+
+      <!-- 1. FLOOD DETAIL PANEL -->
+      <div id="flood-panel" class="disaster-section-detail active">
+        <div class="disaster-detail-grid">
+          <div>
+            <h2>Flood Protocol</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted); font-size:1.1rem;">Flooding is the most common natural hazard worldwide. Flash floods can occur within minutes of heavy rain, dam failures, or storm surges, carrying debris and washing out structures.</p>
+            
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-before"><span></span>Before the Flood</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Identify local elevation levels and determine safe uphill evacuation routes.</p>
+                </li>
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Seal birth records, deeds, and critical papers in waterproof bags.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel" style="border-color: var(--border-glass) !important;">
+              <h3 class="protocol-title protocol-during"><span></span>During the Flood</h3>
+              <ul class="tip-list">
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p>Do not walk or drive through flowing water. Just 6 inches can sweep you off your feet.</p>
+                </li>
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p>If trapped inside a building, move to high floors, avoiding enclosed attics.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-after"><span></span>After the Flood</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Avoid contact with standing floodwaters; they may contain electrical lines or chemicals.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <img src="images/disaster-compound-flooding.jpg" alt="Search and Rescue wading in floods">
+            <div class="kit-summary-sticky glass-panel" style="top: 110px; padding: 24px;">
+              <h3>Flood Preparation</h3>
+              <p style="font-size:0.9rem; color: var(--text-muted); margin: 12px 0 24px 0;">Ensure you have sandbags, utility gloves, rubber boots, and portable pump equipment ready.</p>
+              <a href="emergency-kit.html" class="btn btn-primary btn-sm" style="width: 100%;">Build Flood Kit Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. CYCLONE DETAIL PANEL -->
+      <div id="cyclone-panel" class="disaster-section-detail">
+        <div class="disaster-detail-grid">
+          <div>
+            <h2>Cyclone & Hurricane Protocol</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted); font-size:1.1rem;">Cyclones bring destructive winds exceeding 120 km/h, catastrophic storm surges, and coastal flooding. Preparing property structural joints is critical.</p>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-before"><span></span>Before the Cyclone</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Fit storm shutters or cover window panes with thick marine plywood boards.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel" style="border-color: var(--border-glass) !important;">
+              <h3 class="protocol-title protocol-during"><span></span>During the Cyclone</h3>
+              <ul class="tip-list">
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p>Shelter in solid interior corridors, small central rooms, or bathrooms.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-after"><span></span>After the Cyclone</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Do not inspect outdoor damage until warning systems declare it safe.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <img src="images/cyclone-infographic.jpg" alt="Cyclone Safety Protocol Infographic">
+            <div class="kit-summary-sticky glass-panel" style="top: 110px; padding: 24px;">
+              <h3>Cyclone Preparation</h3>
+              <p style="font-size:0.9rem; color: var(--text-muted); margin: 12px 0 24px 0;">Gather emergency plywood, heavy duty rope, water bottles, and hand-crank warning radios.</p>
+              <a href="emergency-kit.html" class="btn btn-primary btn-sm" style="width: 100%;">Build Cyclone Kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. EARTHQUAKE DETAIL PANEL -->
+      <div id="earthquake-panel" class="disaster-section-detail">
+        <div class="disaster-detail-grid">
+          <div>
+            <h2>Earthquake Response Protocol</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted); font-size:1.1rem;">Earthquakes occur abruptly without warnings, leading to structural failures and dangerous falling debris. Knowing Drop, Cover, and Hold On can save your life.</p>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-before"><span></span>Before the Earthquake</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Secure heavy wall cabinets, bookcases, and heaters to studs using steel straps.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel" style="border-color: var(--border-glass) !important;">
+              <h3 class="protocol-title protocol-during"><span></span>During the Earthquake</h3>
+              <ul class="tip-list">
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p><strong>Drop, Cover, and Hold On.</strong> Move under heavy desks and hold onto the legs.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-after"><span></span>After the Earthquake</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Inspect gas and electricity lines. Turn off main valves if damage is suspected.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <img src="images/family-plan.jpg" alt="Family reviewing earthquake safety plan" style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-glass); margin-bottom: 20px;">
+            <div class="kit-summary-sticky glass-panel" style="top: 110px; padding: 24px;">
+              <h3>Earthquake Preparation</h3>
+              <p style="font-size:0.9rem; color: var(--text-muted); margin: 12px 0 24px 0;">Stock helmet safety gear, solid work boots, flashlights, water bottles, and emergency gas wrenches.</p>
+              <a href="emergency-kit.html" class="btn btn-primary btn-sm" style="width: 100%;">Build Earthquake Kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. FIRE DETAIL PANEL -->
+      <div id="fire-panel" class="disaster-section-detail">
+        <div class="disaster-detail-grid">
+          <div>
+            <h2>Fire Response Protocol</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted); font-size:1.1rem;">House fires and regional wildfires spread with incredible speed. Pre-mapping exit doors and keeping smoke alarms active is vital.</p>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-before"><span></span>Before the Fire</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Install smoke detectors inside every room and test batteries monthly.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel" style="border-color: var(--border-glass) !important;">
+              <h3 class="protocol-title protocol-during"><span></span>During the Fire</h3>
+              <ul class="tip-list">
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p>Crawling low below soot clouds helps avoid inhaling toxic smoke gases.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-after"><span></span>After the Fire</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Do not enter burnt structures until fire marshals declare them secure.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <img src="images/family-kit.jpg" alt="Family preparing fire evacuation kit" style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-glass); margin-bottom: 20px;">
+            <div class="kit-summary-sticky glass-panel" style="top: 110px; padding: 24px;">
+              <h3>Fire Preparation</h3>
+              <p style="font-size:0.9rem; color: var(--text-muted); margin: 12px 0 24px 0;">Acquire fire extinguishers, fire blankets, respirator masks, and emergency lights.</p>
+              <a href="emergency-kit.html" class="btn btn-primary btn-sm" style="width: 100%;">Build Fire Kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. STORM DETAIL PANEL -->
+      <div id="storm-panel" class="disaster-section-detail">
+        <div class="disaster-detail-grid">
+          <div>
+            <h2>Severe Storm Protocol</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted); font-size:1.1rem;">Supercell thunder, high lightning strikes, and gale wind hazards can occur rapidly, knocking out grid power lines and phone networks.</p>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-before"><span></span>Before the Storm</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Unplug sensitive home electronics to protect against lightning surges.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel" style="border-color: var(--border-glass) !important;">
+              <h3 class="protocol-title protocol-during"><span></span>During the Storm</h3>
+              <ul class="tip-list">
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p>Avoid concrete walls and floors, which can conduct lightning currents.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-after"><span></span>After the Storm</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Avoid fallen power lines and stay clear of large puddles nearby.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <img src="images/storm-preparedness.jpg" alt="Storm Preparedness Door Sandbags" style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-glass); margin-bottom: 20px;">
+            <div class="kit-summary-sticky glass-panel" style="top: 110px; padding: 24px;">
+              <h3>Storm Preparation</h3>
+              <p style="font-size:0.9rem; color: var(--text-muted); margin: 12px 0 24px 0;">Acquire power banks, emergency flashlights, hand-crank radios, and solar lanterns.</p>
+              <a href="emergency-kit.html" class="btn btn-primary btn-sm" style="width: 100%;">Build Storm Kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. HEATWAVE DETAIL PANEL -->
+      <div id="heatwave-panel" class="disaster-section-detail">
+        <div class="disaster-detail-grid">
+          <div>
+            <h2>Extreme Heatwave Protocol</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted); font-size:1.1rem;">Heatwaves are prolonged periods of hot weather that strain cardiovascular health. Proper hydration and cooling strategies save lives.</p>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-before"><span></span>Before the Heatwave</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Insulate air conditioning ductwork and seal drafty window gaps.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel" style="border-color: var(--border-glass) !important;">
+              <h3 class="protocol-title protocol-during"><span></span>During the Heatwave</h3>
+              <ul class="tip-list">
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p>Drink plenty of water and electrolytes, avoiding sugary or caffeinated drinks.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-after"><span></span>After the Heatwave</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Continue monitoring signs of heat exhaustion: nausea, dizziness, or headaches.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <img src="images/cyclone-kit.jpg" alt="Emergency kit hydration supplies infographic" style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-glass); margin-bottom: 20px;">
+            <div class="kit-summary-sticky glass-panel" style="top: 110px; padding: 24px;">
+              <h3>Heatwave Preparation</h3>
+              <p style="font-size:0.9rem; color: var(--text-muted); margin: 12px 0 24px 0;">Stock electrolyte packs, cooling towels, water containers, and emergency spray bottles.</p>
+              <a href="emergency-kit.html" class="btn btn-primary btn-sm" style="width: 100%;">Build Heatwave Kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. LANDSLIDE DETAIL PANEL -->
+      <div id="landslide-panel" class="disaster-section-detail">
+        <div class="disaster-detail-grid">
+          <div>
+            <h2>Landslide & Mudslide Protocol</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted); font-size:1.1rem;">Landslides occur when soil layers slide down slope routes. Heavy rain, earthquakes, or wildfires can trigger landslides suddenly.</p>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-before"><span></span>Before the Landslide</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Monitor soil drainage paths on hillsides and watch for tilting fence posts.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel" style="border-color: var(--border-glass) !important;">
+              <h3 class="protocol-title protocol-during"><span></span>During the Landslide</h3>
+              <ul class="tip-list">
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p>Evacuate landslide paths immediately. Mudflows travel faster than people can run.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-after"><span></span>After the Landslide</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Stay clear of mudflow areas; slide slopes can collapse again without warning.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <img src="images/storm-preparedness.jpg" alt="Slope emergency tools and protection kit" style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-glass); margin-bottom: 20px;">
+            <div class="kit-summary-sticky glass-panel" style="top: 110px; padding: 24px;">
+              <h3>Landslide Preparation</h3>
+              <p style="font-size:0.9rem; color: var(--text-muted); margin: 12px 0 24px 0;">Prepare safety helmets, solid work boots, flashlights, water bottles, and emergency tools.</p>
+              <a href="emergency-kit.html" class="btn btn-primary btn-sm" style="width: 100%;">Build Landslide Kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. EXTREME WEATHER DETAIL PANEL -->
+      <div id="extreme-weather-panel" class="disaster-section-detail">
+        <div class="disaster-detail-grid">
+          <div>
+            <h2>Extreme Weather Protocol</h2>
+            <p style="margin-bottom: 24px; color: var(--text-muted); font-size:1.1rem;">Severe cold weather, blizzards, and winter ice storms bring sub-zero hazards. Protecting pipes from freezing and preventing hypothermia are priorities.</p>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-before"><span></span>Before Extreme Cold</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Add insulation wrap to water pipes exposed to cold drafts.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel" style="border-color: var(--border-glass) !important;">
+              <h3 class="protocol-title protocol-during"><span></span>During Extreme Cold</h3>
+              <ul class="tip-list">
+                <li class="tip-item tip-item-warning">
+                  <i class="fa-solid fa-circle-xmark" style="color:var(--accent); margin-top:4px;"></i>
+                  <p>Dress in warm layers, covering exposed skin to prevent frostbite.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="disaster-protocol-card glass-panel">
+              <h3 class="protocol-title protocol-after"><span></span>After Extreme Cold</h3>
+              <ul class="tip-list">
+                <li class="tip-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--secondary); margin-top:4px;"></i>
+                  <p>Gradually warm frozen pipes to prevent structural damage or cracks.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <img src="images/family-supplies.jpg" alt="Family preparing cold weather insulation supplies" style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-glass); margin-bottom: 20px;">
+            <div class="kit-summary-sticky glass-panel" style="top: 110px; padding: 24px;">
+              <h3>Extreme Cold Preparation</h3>
+              <p style="font-size:0.9rem; color: var(--text-muted); margin: 12px 0 24px 0;">Stock thermal blankets, wool clothing, matches, fuel supplies, and backup food boxes.</p>
+              <a href="emergency-kit.html" class="btn btn-primary btn-sm" style="width: 100%;">Build Winter Kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: DISASTER STATISTICS & GRAPH -->
+  <section class="section" style="border-top: 1px solid rgba(255,255,255,0.05);"><div class="container reveal">
+      <div class="grid-about">
+        <div>
+          <span class="badge">Global Risk Analytics</span>
+          <h2>10-Year Global Hazard Statistics</h2>
+          <p>Scientific data indicates a steady increase in extreme meteorological conditions globally. SafeAlert evaluates data points to identify high-probability zones for floods, cyclones, and wildfires.</p>
+          <div style="margin-top: 24px; padding: 20px; border-radius: var(--radius-sm); background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+            <h4 style="color: var(--secondary); font-size:0.9rem; text-transform:uppercase; margin-bottom:10px;">Statistical Summary (Annual Average)</h4>
+            <div style="display:flex; flex-direction:column; gap:12px; font-size:0.9rem;">
+              <div style="display:flex; justify-content:space-between;">
+                <span>Severe Storm/Windstorms:</span>
+                <strong style="color:var(--text-white);">124 Occurrences</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>Major River/Coastal Floods:</span>
+                <strong style="color:var(--text-white);">98 Occurrences</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span>Wildfire Forest Land Loss:</span>
+                <strong style="color:var(--text-white);">4.2M Hectares</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- SVG Statistical Bar Chart Graph representing risk increase -->
+        <div class="glass-panel" style="padding: 24px; text-align: center;">
+          <h3 style="font-size:1.15rem; margin-bottom: 20px; color: var(--text-white);">Climate Hazard Trends (Indexed 2015-2025)</h3>
+          <div style="position: relative; width: 100%; height: 220px; display: flex; align-items: flex-end; justify-content: space-around; padding-bottom: 25px; border-bottom: 1px solid var(--border-glass);">
+            
+            <!-- Bar 1 (2015) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 15%;">
+              <span style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">100</span>
+              <div style="width: 100%; height: 60px; background: rgba(16, 185, 129, 0.4); border: 1px solid var(--secondary); border-radius: 4px 4px 0 0; transition: var(--transition);"></div>
+              <span style="font-size: 0.85rem; color: var(--text-white); margin-top: 8px;">2015</span>
+            </div>
+            
+            <!-- Bar 2 (2018) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 15%;">
+              <span style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">125</span>
+              <div style="width: 100%; height: 95px; background: rgba(16, 185, 129, 0.6); border: 1px solid var(--secondary); border-radius: 4px 4px 0 0; transition: var(--transition);"></div>
+              <span style="font-size: 0.85rem; color: var(--text-white); margin-top: 8px;">2018</span>
+            </div>
+            
+            <!-- Bar 3 (2021) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 15%;">
+              <span style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">158</span>
+              <div style="width: 100%; height: 140px; background: rgba(249, 115, 22, 0.6); border: 1px solid var(--accent); border-radius: 4px 4px 0 0; transition: var(--transition);"></div>
+              <span style="font-size: 0.85rem; color: var(--text-white); margin-top: 8px;">2021</span>
+            </div>
+            
+            <!-- Bar 4 (2025) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 15%;">
+              <span style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">194</span>
+              <div style="width: 100%; height: 180px; background: rgba(239, 68, 68, 0.7); border: 1px solid #ef4444; border-radius: 4px 4px 0 0; transition: var(--transition);"></div>
+              <span style="font-size: 0.85rem; color: var(--text-white); margin-top: 8px;">2025</span>
+            </div>
+            
+          </div>
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 15px; line-height: 1.4;">Data source: Global Crisis Preparedness Database. Indexed relative to baseline value of 100 in 2015.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: RAPID EMERGENCY RESPONSE PROTOCOLS -->
+  <section class="section section-light" style="border-top: 1px solid rgba(255,255,255,0.05); padding-bottom: 60px;">
+    <div class="container grid-about reveal" style="grid-template-columns: 0.8fr 1.2fr;">
+      <div>
+        <img src="images/disaster-rescue-stretcher.jpg" alt="Emergency crews rescuing survivors from street" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+      </div>
+      <div>
+        <span class="badge">Rescue Logistics</span>
+        <h2>Active Search and Rescue Coordination</h2>
+        <p>In the direct aftermath of heavy earthquakes, windstorms, or severe coastal flooding, local emergency dispatchers execute critical search and rescue sweeps. SafeAlert coordinates communication logs and location nodes to expedite these responder sweeps.</p>
+        <p style="margin-top: 15px; color: var(--text-muted);">By registering your household safety blueprints and out-of-town checkpoints, you make it possible for municipal warden crews to verify family headcounts and locate survival cells quickly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: ALERT LEVEL INDICATORS -->
+  <section class="section section-light" style="border-top: 1px solid rgba(255,255,255,0.05); padding-bottom: 60px;"><div class="container reveal">
+      <div class="section-title-wrap">
+        <h2>Municipal Alert Colors</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">Learn how meteorological watch groups define danger thresholds for public advisories.</p>
+      </div>
+      <div class="helplines-grid" style="margin-top: 30px;">
+        <div class="helpline-card glass-card" style="background:#070d1e; border-left: 5px solid #10b981; border-color:var(--border-glass) !important;">
+          <i class="fa-solid fa-circle-info" style="color: #10b981;"></i>
+          <h4>Green (Advisory)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Minor weather alerts. Normal operations continue. Check checklist supplies.</p>
+        </div>
+        <div class="helpline-card glass-card" style="background:#070d1e; border-left: 5px solid #eab308; border-color:var(--border-glass) !important;">
+          <i class="fa-solid fa-triangle-exclamation" style="color: #eab308;"></i>
+          <h4>Yellow (Watch)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Weather hazard is possible. Assemble emergency kit dry packs.</p>
+        </div>
+        <div class="helpline-card glass-card" style="background:#070d1e; border-left: 5px solid #f97316; border-color:var(--border-glass) !important;">
+          <i class="fa-solid fa-bullhorn" style="color: #f97316;"></i>
+          <h4>Orange (Warning)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Hazard is imminent. Board up glass windows and prepare generators.</p>
+        </div>
+        <div class="helpline-card glass-card" style="background:#070d1e; border-left: 5px solid #ef4444; border-color:var(--border-glass) !important;">
+          <i class="fa-solid fa-skull-crossbones" style="color: #ef4444;"></i>
+          <h4>Red (Emergency)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Immediate severe danger. Secure group members and evacuate immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Mobilizing rapid rescue coordination, survival resources, food security calculators, and community resilience blueprints for safety zones.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="disaster-types.html">Disaster Types</a>
+          <a href="preparedness-guides.html">Preparedness Guides</a>
+          <a href="resources.html">Resources Library</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Coordinates</a>
+          <a href="404.html">Terms & Agreements</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="newsletter-desc">Get quarterly emergency updates, volunteer alerts, and relief operations reports.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); window.showCustomAlert('Subscribed successfully to SafeAlert Newsletter!', 'success');">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly. All rights reserved. Designed for emergency relief.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Security Audits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Read query strings and activate correct tabs
+    const params = new URLSearchParams(window.location.search);
+    const initialTab = params.get('tab');
+    if (initialTab) {
+      const tabBtn = document.querySelector(`.tab-btn[data-target="${initialTab}-panel"]`);
+      if (tabBtn) {
+        tabBtn.click();
+      }
+    }
+  </script>
+</body>
+</html>

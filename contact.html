@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - SafeAlert Preparedness</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- FIXED/STICKY HEADER & NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search resources..." onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="disaster-types.html">Disaster Types</a></li>
+          <li><a href="preparedness-guides.html">Preparedness Guides</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Prepared</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-SAFE</p>
+          <p><i class="fa-solid fa-envelope"></i> support@safealert.org</p>
+          <p><i class="fa-solid fa-location-dot"></i> 100 Safety Boulevard, Washington D.C.</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Prepared</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header reveal">
+    <div class="container">
+      <span class="badge">Get in Touch</span>
+      <h1>Contact SafeAlert Support</h1>
+      <p>Need support with emergency kit math, community integrations, or plan exports? Drop a line.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM & INFO SECTION -->
+  <section class="section">
+    <div class="container contact-layout reveal">
+      <!-- Left side: Info & Map Panel -->
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        <div class="info-box glass-panel" style="padding: 30px; border-color: var(--border-glass) !important;">
+          <span class="badge" style="margin-bottom: 12px; display: inline-block;">Inquiries Desk</span>
+          <h2 style="font-size: 2rem; color: white; margin-bottom: 16px;">Connect With Us. We're Here to Listen.</h2>
+          <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 30px; font-size: 0.95rem; line-height: 1.6;">
+            Get in touch for volunteer opportunities, local partnerships, or donation assistance.
+          </p>
+          
+          <div style="display: flex; flex-direction: column; gap: 20px; font-size: 0.95rem;">
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+              <i class="fa-solid fa-location-dot" style="color: var(--accent); font-size: 1.2rem; margin-top: 4px; flex-shrink: 0;"></i>
+              <div>
+                <h4 style="font-weight: 700; font-size: 0.95rem; color: white; margin-bottom: 4px;">Disaster Relief Foundation HQ</h4>
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin: 0;">102 Safety Boulevard, Washington, DC 20001</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+              <i class="fa-solid fa-envelope" style="color: var(--accent); font-size: 1.2rem; margin-top: 4px; flex-shrink: 0;"></i>
+              <div>
+                <h4 style="font-weight: 700; font-size: 0.95rem; color: white; margin-bottom: 4px;">Email Communication</h4>
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin: 0;">operations@stackly.org</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; align-items: flex-start; margin-bottom: 10px;">
+              <i class="fa-solid fa-clock" style="color: var(--accent); font-size: 1.2rem; margin-top: 4px; flex-shrink: 0;"></i>
+              <div>
+                <h4 style="font-weight: 700; font-size: 0.95rem; color: white; margin-bottom: 4px;">Working Hours</h4>
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin: 0;">24/7 Emergency Response (Active Operations Desk)</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Embedded Map Container -->
+          <div class="map-container" style="position: relative; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--secondary); box-shadow: var(--shadow-sm); aspect-ratio: 16/9; width: 100%; max-width: 440px; margin-top: 25px;">
+            <img src="images/dark_map_mockup.jpg" alt="HQ Location Map" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <a href="404.html" style="position: absolute; top: 12px; left: 12px; background-color: rgba(10, 17, 40, 0.85); border: 1px solid var(--secondary); border-radius: var(--radius-sm); padding: 6px 12px; font-size: 0.75rem; color: white; display: flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; transition: var(--transition);">
+              <i class="fa-solid fa-location-dot" style="color: var(--secondary); font-size: 0.8rem; margin: 0;"></i>
+              <span>Open in Maps</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Form -->
+      <div class="form-card glass-panel">
+        <h2 style="margin-bottom: 24px;">Leave a Message</h2>
+        <form id="contactForm" data-validate data-redirect="index.html" novalidate>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="contactFullName">Full Name *</label>
+            <div style="position: relative;">
+              <i class="fa-solid fa-user" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+              <input type="text" id="contactFullName" placeholder="John Doe" required data-validate-name style="background: #070d1e; border-color: var(--border-glass); padding-left: 42px; width: 100%;">
+            </div>
+            <span class="form-error-msg">Full name is required.</span>
+          </div>
+
+          <!-- Email Address -->
+          <div class="form-group">
+            <label for="contactEmail">Email Address *</label>
+            <div style="position: relative;">
+              <i class="fa-solid fa-envelope" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+              <input type="email" id="contactEmail" placeholder="john.doe@gmail.com" required style="background: #070d1e; border-color: var(--border-glass); padding-left: 42px; width: 100%;">
+            </div>
+            <span class="form-error-msg">A valid email is required.</span>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group">
+            <label for="contactPhone">Phone Number *</label>
+            <div style="position: relative;">
+              <i class="fa-solid fa-phone" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+              <input type="tel" id="contactPhone" placeholder="9876543210" required style="background: #070d1e; border-color: var(--border-glass); padding-left: 42px; width: 100%;">
+            </div>
+            <span class="form-error-msg">A valid phone number is required.</span>
+          </div>
+
+          <!-- Message Subject -->
+          <div class="form-group">
+            <label for="contactSubject">Message Subject *</label>
+            <div style="position: relative;">
+              <i class="fa-solid fa-list" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+              <input type="text" id="contactSubject" placeholder="e.g. Volunteer Opportunities" required style="background: #070d1e; border-color: var(--border-glass); padding-left: 42px; width: 100%;">
+            </div>
+            <span class="form-error-msg">Subject is required.</span>
+          </div>
+
+          <!-- Inquiry Type -->
+          <div class="form-group">
+            <label for="contactInquiryType">Inquiry Type *</label>
+            <div style="position: relative;">
+              <i class="fa-solid fa-circle-info" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+              <select id="contactInquiryType" required style="background: #070d1e; border-color: var(--border-glass); padding-left: 42px; width: 100%;">
+                <option value="" disabled selected>Select Inquiry Type</option>
+                <option value="volunteer">Volunteer Inquiry</option>
+                <option value="donation">Financial Donations</option>
+                <option value="supplies">Supply Sponsorship</option>
+                <option value="media">Media / Press Inquiry</option>
+                <option value="other">General Inquiry</option>
+              </select>
+            </div>
+            <span class="form-error-msg">Please select an inquiry type.</span>
+          </div>
+
+          <!-- Message Details -->
+          <div class="form-group">
+            <label for="contactMessage">Message Details *</label>
+            <div style="position: relative;">
+              <i class="fa-solid fa-comment-dots" style="position: absolute; left: 14px; top: 18px; color: var(--text-muted);"></i>
+              <textarea id="contactMessage" rows="5" placeholder="Type your message here..." required style="background: #070d1e; border-color: var(--border-glass); padding-left: 42px; width: 100%;"></textarea>
+            </div>
+            <span class="form-error-msg">Message details are required.</span>
+          </div>
+
+          <button type="submit" class="btn" style="width: 100%; background-color: var(--secondary); color: var(--text-white); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fa-solid fa-paper-plane" style="color: var(--text-white); font-size: 0.9rem; margin: 0;"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: EMERGENCY HELPLINES -->
+  <section class="section section-light" style="border-top: 1px solid rgba(255,255,255,0.05); padding-bottom: 60px;"><div class="container reveal">
+      <div class="section-title-wrap">
+        <h2>National Emergency Helplines</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">For immediate rescue assistance, use these Toll-Free numbers to bypass general queues.</p>
+      </div>
+      <div class="helplines-grid reveal-stagger">
+        <div class="helpline-card glass-card" style="background:#070d1e; border-color:var(--border-glass) !important;">
+          <i class="fa-solid fa-phone-flip"></i>
+          <h4>National Emergency</h4>
+          <span class="phone-number">911</span>
+        </div>
+        <div class="helpline-card glass-card" style="background:#070d1e; border-color:var(--border-glass) !important;">
+          <i class="fa-solid fa-house-medical"></i>
+          <h4>FEMA Disaster Care</h4>
+          <span class="phone-number">1-800-621-3362</span>
+        </div>
+        <div class="helpline-card glass-card" style="background:#070d1e; border-color:var(--border-glass) !important;">
+          <i class="fa-solid fa-hand-holding-medical"></i>
+          <h4>Red Cross Support</h4>
+          <span class="phone-number">1-800-733-2767</span>
+        </div>
+        <div class="helpline-card glass-card" style="background:#070d1e; border-color:var(--border-glass) !important;">
+          <i class="fa-solid fa-kit-medical"></i>
+          <h4>Poison Control Hub</h4>
+          <span class="phone-number">1-800-222-1222</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Mobilizing rapid rescue coordination, survival resources, food security calculators, and community resilience blueprints for safety zones.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="disaster-types.html">Disaster Types</a>
+          <a href="preparedness-guides.html">Preparedness Guides</a>
+          <a href="resources.html">Resources Library</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Coordinates</a>
+          <a href="404.html">Terms & Agreements</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="newsletter-desc">Get quarterly emergency updates, volunteer alerts, and relief operations reports.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); window.showCustomAlert('Subscribed successfully to SafeAlert Newsletter!', 'success');">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly. All rights reserved. Designed for emergency relief.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Security Audits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

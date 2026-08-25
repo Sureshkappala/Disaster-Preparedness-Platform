@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Emergency Plan - Step Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- FIXED/STICKY HEADER & NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search resources..." onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="disaster-types.html">Disaster Types</a></li>
+          <li><a href="preparedness-guides.html">Preparedness Guides</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Prepared</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-SAFE</p>
+          <p><i class="fa-solid fa-envelope"></i> support@safealert.org</p>
+          <p><i class="fa-solid fa-location-dot"></i> 100 Safety Boulevard, Washington D.C.</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Prepared</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header reveal">
+    <div class="container">
+      <span class="badge">Safe Evacuation Route Planning</span>
+      <h1>Family Emergency Plan</h1>
+      <p>Draft your primary exit protocols and local check-in contacts. Print or save to your local browser storage.</p>
+    </div>
+  </div>
+
+  <!-- PLAN FORM SECTION -->
+  <section class="section">
+    <div class="container plan-layout">
+      <div class="form-card glass-panel">
+        <div class="section-title-wrap" style="margin-bottom: 30px;">
+          <h2>Emergency Coordination Blueprint</h2>
+          <p style="color: var(--text-muted);">Fill in details below. Note: SafeAlert respects privacy; plan details are kept purely in your browser storage.</p>
+        </div>
+
+        <form id="emergencyPlanForm" data-validate novalidate>
+          <div class="form-group-row">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="planName">Full Name *</label>
+              <input type="text" id="planName" placeholder="John Doe" required data-validate-name style="background: #070d1e; border-color: var(--border-glass);">
+              <span class="form-error-msg">This field is required.</span>
+            </div>
+            <!-- Family Group Name -->
+            <div class="form-group">
+              <label for="planGroupName">Family / Group Name *</label>
+              <input type="text" id="planGroupName" placeholder="The Doe Family" required data-validate-name style="background: #070d1e; border-color: var(--border-glass);">
+              <span class="form-error-msg">This field is required.</span>
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <!-- Primary Emergency Contact -->
+            <div class="form-group">
+              <label for="planContact">Primary Emergency Contact (Phone) *</label>
+              <input type="tel" id="planContact" placeholder="5551234567" required style="background: #070d1e; border-color: var(--border-glass);">
+              <span class="form-error-msg">This field is required.</span>
+            </div>
+            <!-- Secondary Contact -->
+            <div class="form-group">
+              <label for="planSecondaryContact">Secondary Out-of-Town Contact (Phone) *</label>
+              <input type="tel" id="planSecondaryContact" placeholder="5559876543" required style="background: #070d1e; border-color: var(--border-glass);">
+              <span class="form-error-msg">This field is required.</span>
+            </div>
+          </div>
+
+          <!-- Safe Meeting Point -->
+          <div class="form-group">
+            <label for="planMeetingPoint">Neighborhood Meeting Point (Safe Zone) *</label>
+            <input type="text" id="planMeetingPoint" placeholder="Municipal Park (East Gate Gatehouse)" required style="background: #070d1e; border-color: var(--border-glass);">
+            <span class="form-error-msg">This field is required.</span>
+          </div>
+
+          <!-- Evacuation Location -->
+          <div class="form-group">
+            <label for="planEvacuation">Designated Evacuation Shelter Location *</label>
+            <input type="text" id="planEvacuation" placeholder="Community Center Gym, 500 Oak St" required style="background: #070d1e; border-color: var(--border-glass);">
+            <span class="form-error-msg">This field is required.</span>
+          </div>
+
+          <!-- Notes -->
+          <div class="form-group">
+            <label for="planNotes">Special Needs / Critical Medications / Pets Notes</label>
+            <textarea id="planNotes" rows="4" placeholder="List food allergies, critical medications..." style="background: #070d1e; border-color: var(--border-glass);"></textarea>
+          </div>
+
+          <div class="plan-checkbox" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 24px;">
+            <input type="checkbox" id="planVerify" required style="width: auto; margin-top: 4px;">
+            <label for="planVerify" style="font-size: 0.9rem; color: var(--text-muted);">I confirm that all household members have walked through the designated escape routes and assembly locations.</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Save Emergency Plan & Generate PDF Layout</button>
+        </form>
+      </div>
+      
+      <!-- Right column: Advice and visual image -->
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        <img src="images/family-gathering.jpg" alt="Family reviewing emergency plan" style="width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-glass); box-shadow: var(--shadow-sm);">
+        <div class="info-box glass-panel" style="padding: 30px; border-color: var(--border-glass) !important;">
+          <h3>Plan Mapping Advice</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-top: 10px;">Establish evacuation meeting points both inside your immediate neighborhood and outside your city lines. This ensures options if localized regions are blockaded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINT PREVIEW OVERLAY MODAL -->
+  <div id="planOutputModal" role="dialog" aria-modal="true" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 17, 40, 0.8); z-index: 1050; align-items: center; justify-content: center; padding: 24px;">
+    <div class="modal-content glass-panel" style="padding: 40px; width: 100%; max-width: 650px; max-height: 90vh; overflow-y: auto; position: relative;">
+      <button class="close-modal" aria-label="Close modal" style="position: absolute; top: 20px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</button>
+      <div style="border-bottom: 2px solid var(--secondary); padding-bottom: 15px; margin-bottom: 20px; text-align: center;">
+        <span class="badge">SafeAlert Document</span>
+        <h2 style="font-size: 1.5rem; margin-top: 10px;">Family Emergency Plan</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Keep copies in emergency kits.</p>
+      </div>
+      
+      <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem;">
+        <div>
+          <strong>Household Coordinator:</strong>
+          <span id="outName"></span>
+        </div>
+        <div>
+          <strong>Family/Group Name:</strong>
+          <span id="outGroupName"></span>
+        </div>
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div>
+          <strong>Primary Contact Phone:</strong>
+          <span id="outPrimary"></span>
+        </div>
+        <div>
+          <strong>Secondary Out-of-Town Contact:</strong>
+          <span id="outSecondary"></span>
+        </div>
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div>
+          <strong>Neighborhood Meeting Point:</strong>
+          <p id="outMeeting" style="margin-top: 4px; padding-left: 10px; border-left: 3px solid var(--warning);"></p>
+        </div>
+        <div>
+          <strong>Designated Evacuation Shelter:</strong>
+          <p id="outEvacuation" style="margin-top: 4px; padding-left: 10px; border-left: 3px solid var(--danger);"></p>
+        </div>
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div>
+          <strong>Important Instructions / Health Notes:</strong>
+          <p id="outNotes" style="color: var(--text-muted); white-space: pre-wrap; font-size: 0.85rem; background: rgba(0,0,0,0.2); padding: 12px; border-radius: var(--radius-sm); margin-top: 6px;"></p>
+        </div>
+      </div>
+
+      <div style="margin-top: 30px; display: flex; gap: 12px;">
+        <button class="btn btn-primary" onclick="window.print()" style="flex-grow: 1;">Print Plan</button>
+        <a href="user-dashboard.html" class="btn btn-outline" style="flex-grow: 1; text-align: center; display: inline-flex; align-items: center; justify-content: center;">View Dashboard Sync</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Mobilizing rapid rescue coordination, survival resources, food security calculators, and community resilience blueprints for safety zones.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="disaster-types.html">Disaster Types</a>
+          <a href="preparedness-guides.html">Preparedness Guides</a>
+          <a href="resources.html">Resources Library</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Coordinates</a>
+          <a href="404.html">Terms & Agreements</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="newsletter-desc">Get quarterly emergency updates, volunteer alerts, and relief operations reports.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); window.showCustomAlert('Subscribed successfully to SafeAlert Newsletter!', 'success');">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly. All rights reserved. Designed for emergency relief.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Security Audits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

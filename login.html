@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SafeAlert Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 2rem 1rem; background-color: var(--primary);">
+
+  <!-- BACK TO HOME BUTTON -->
+  <a href="index.html" class="back-to-home-btn"><i class="fa-solid fa-house"></i> Back to Home</a>
+
+  <!-- LOGIN CONTAINER -->
+  <div style="width: 100%; max-width: 440px; margin: auto;">
+    <div class="glass-card" style="padding: 2.75rem 2.25rem; text-align: center; border: 1.5px solid var(--border-glass) !important; box-shadow: var(--shadow-lg);">
+      
+      <!-- LOGO & HEADING -->
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <a href="index.html" class="logo" style="margin: 0 auto 1.25rem auto; justify-content: center;">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <h2 style="font-size: 2rem; margin-bottom: 0.4rem; font-family: var(--font-heading); font-weight: 700;">Welcome Back</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.4;">Access your emergency dashboards and saved plans.</p>
+      </div>
+
+      <!-- FORM -->
+      <form id="loginForm" data-validate data-redirect="user-dashboard.html" style="text-align: left;" novalidate>
+        
+        <!-- EMAIL FIELD WITH ICON -->
+        <div class="form-group">
+          <label for="loginEmail">Email Address</label>
+          <div style="position: relative;">
+            <i class="fa-solid fa-envelope" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem;"></i>
+            <input type="email" id="loginEmail" placeholder="coordinator@safealert.org" class="form-control" style="padding-left: 2.75rem; background: #070d1e; border: 1px solid var(--border-glass); color: #fff;" required>
+          </div>
+          <span class="form-error-msg">A valid email address is required.</span>
+        </div>
+
+        <!-- PASSWORD FIELD WITH LOCK & EYE ICON -->
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <div class="password-input-wrapper">
+            <i class="fa-solid fa-lock" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem; z-index:5;"></i>
+            <input type="password" id="loginPassword" placeholder="••••••••" class="form-control" style="padding-left: 2.75rem; padding-right: 2.75rem; background: #070d1e; border: 1px solid var(--border-glass); color: #fff;" required>
+            <button type="button" class="password-toggle" aria-label="Toggle Password Visibility">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <span class="form-error-msg">Password is required.</span>
+        </div>
+
+        <!-- ROLE SELECT FIELD WITH USER ICON -->
+        <div class="form-group">
+          <label for="loginRole">Select Dashboard Role</label>
+          <div style="position: relative;">
+            <i class="fa-solid fa-user-shield" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem;"></i>
+            <select id="loginRole" class="form-control" style="padding-left: 2.75rem; background: #070d1e; border: 1px solid var(--border-glass); color: #fff;" required>
+              <option value="" disabled selected>Select Role...</option>
+              <option value="individual">Household / Family Representative</option>
+              <option value="coordinator">Safety Coordinator (Admin)</option>
+            </select>
+          </div>
+          <span class="form-error-msg">Please select your safety role.</span>
+        </div>
+
+        <!-- REMEMBER ME & FORGOT PASSWORD ROW -->
+        <div class="login-remember-row">
+          <label style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-muted); cursor: pointer;">
+            <input type="checkbox" style="width: auto; margin: 0;"> Remember Me
+          </label>
+          <a href="404.html" style="color: var(--accent); font-weight: 600; text-decoration: none;">Forgot Password?</a>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; font-size: 1.05rem; font-weight: 700; border-radius: var(--radius-sm); border: none; background: var(--accent) !important; color: #fff !important; text-shadow: none;">Access Dashboards</button>
+
+      </form>
+
+      <!-- BOTTOM REGISTER LINK -->
+      <div style="text-align: center; margin-top: 1.75rem; font-size: 0.85rem; color: var(--text-muted);">
+        Don't have an account? <a href="register.html" style="color: var(--secondary); font-weight: 700; text-decoration: none;">Register Here &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

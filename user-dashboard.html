@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - SafeAlert</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--primary);">
+
+  <!-- MOBILE TOGGLE HEADER -->
+  <div class="db-mobile-header">
+    <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+    <a href="user-dashboard.html" class="db-mobile-logo" style="text-decoration: none;">
+      <div class="logo" style="pointer-events: none;">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </div>
+    </a>
+    <div class="db-mobile-avatar user-avatar">US</div>
+  </div>
+  
+  <!-- Sidebar Backdrop Overlay -->
+  <div class="db-sidebar-overlay"></div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="db-container">
+    
+    <!-- COLLAPSIBLE SIDEBAR -->
+    <aside class="db-sidebar">
+      <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="overflow-y: auto; height: 100%; display: flex; flex-direction: column;">
+        <a href="user-dashboard.html" class="sidebar-logo" style="text-decoration: none;">
+          <div class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </div>
+        </a>
+        
+        <!-- Group 1: General Safety -->
+        <div class="sidebar-section-title">Household Safety</div>
+        <nav class="sidebar-menu">
+          <a href="user-dashboard.html" class="sidebar-link active"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+          <a href="db-user-kit.html" class="sidebar-link"><i class="fa-solid fa-toolbox"></i> Supply Kit Builder</a>
+          <a href="db-user-plan.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Evacuation Plan</a>
+        </nav>
+
+        <!-- Group 2: Library & Help -->
+        <div class="sidebar-section-title">Resources</div>
+        <nav class="sidebar-menu">
+          <a href="db-user-protocols.html" class="sidebar-link"><i class="fa-solid fa-triangle-exclamation"></i> Emergency Protocols</a>
+          <a href="db-user-blueprints.html" class="sidebar-link"><i class="fa-solid fa-school-flag"></i> Safety Blueprints</a>
+          <a href="db-user-library.html" class="sidebar-link"><i class="fa-solid fa-book-bookmark"></i> Education Library</a>
+        </nav>
+
+        <!-- Logout -->
+        <div class="sidebar-logout">
+          <a href="login.html" class="sidebar-link" onclick="localStorage.clear();"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT DISPLAY -->
+    <main class="dashboard-content">
+      
+      <!-- DESKTOP TOP BAR -->
+      <div class="dashboard-header">
+        <div>
+          <span class="badge badge-alert">Household Dashboard</span>
+          <h1>Control Board</h1>
+        </div>
+        <div class="dashboard-user-bar">
+          <button class="notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge"></span>
+          </button>
+          <div class="user-profile-menu">
+            <div class="user-avatar">US</div>
+            <div class="user-details">
+              <span class="user-name">USER ACCOUNT</span>
+              <span class="user-role">Household Rep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- METRICS GRID -->
+      <div class="db-metrics reveal-stagger">
+        <div class="db-card">
+          <div class="db-card-info">
+            <h3>Preparedness Progress</h3>
+            <div class="db-card-value dashboard-score-value">0%</div>
+          </div>
+          <div class="db-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        </div>
+        <div class="db-card db-card-accent">
+          <div class="db-card-info">
+            <h3>Emergency Kit Items</h3>
+            <div class="db-card-value kit-summary-count">0 Items</div>
+          </div>
+          <div class="db-card-icon"><i class="fa-solid fa-box-open"></i></div>
+        </div>
+        <div class="db-card">
+          <div class="db-card-info">
+            <h3>Household Status</h3>
+            <div class="db-card-value" style="font-size: 1.5rem; color: var(--secondary);">Resilient</div>
+          </div>
+          <div class="db-card-icon"><i class="fa-solid fa-people-roof"></i></div>
+        </div>
+        <div class="db-card db-card-accent">
+          <div class="db-card-info">
+            <h3>Active Warning Zones</h3>
+            <div class="db-card-value" style="font-size: 1.5rem; color: var(--danger);">0 Areas</div>
+          </div>
+          <div class="db-card-icon" style="background-color: rgba(239, 68, 68, 0.12); color: var(--danger);"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        </div>
+      </div>
+
+      <!-- GRID LAYOUT -->
+      <div class="db-grid reveal-stagger">
+        <!-- Panel 1: Progress Chart -->
+        <div class="db-panel">
+          <div class="db-panel-header">
+            <h2>Simulated Preparedness Score</h2>
+            <span style="font-size:0.8rem; color:var(--text-muted);">Calculated Monthly</span>
+          </div>
+          <div class="chart-container">
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">30%</span>
+              <div class="chart-bar" data-height="30%" style="background-color: var(--accent);"></div>
+              <span class="chart-bar-label">Mar</span>
+            </div>
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">45%</span>
+              <div class="chart-bar" data-height="45%" style="background-color: var(--warning);"></div>
+              <span class="chart-bar-label">Apr</span>
+            </div>
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">55%</span>
+              <div class="chart-bar" data-height="55%" style="background-color: var(--warning);"></div>
+              <span class="chart-bar-label">May</span>
+            </div>
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">70%</span>
+              <div class="chart-bar" data-height="70%" style="background-color: var(--secondary);"></div>
+              <span class="chart-bar-label">Jun</span>
+            </div>
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">85%</span>
+              <div class="chart-bar" data-height="85%" style="background-color: var(--secondary);"></div>
+              <span class="chart-bar-label">Jul</span>
+            </div>
+            <div class="chart-bar-wrapper">
+              <span class="chart-bar-value">95%</span>
+              <div class="chart-bar" data-height="95%" style="background-color: var(--secondary);"></div>
+              <span class="chart-bar-label">Aug</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Kit status -->
+        <div class="db-panel" style="border-color: var(--border-glass) !important;">
+          <div class="db-panel-header">
+            <h2>Supply Kit Summary</h2>
+          </div>
+          <div class="chart-pie-container">
+            <div class="chart-pie-sim"></div>
+            <div class="chart-pie-legend">
+              <div class="legend-item"><span class="legend-color legend-primary"></span> Packed (65%)</div>
+              <div class="legend-item"><span class="legend-color legend-accent"></span> Missing (20%)</div>
+              <div class="legend-item"><span class="legend-color legend-warning"></span> Expired (15%)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: MEMBERS STATUS TABLE -->
+      <div class="db-panel" style="margin-bottom: 30px;">
+        <div class="db-panel-header">
+          <h2>Household Check-In Logs</h2>
+        </div>
+        <div class="table-responsive">
+          <table class="db-table">
+            <thead>
+              <tr>
+                <th>Member</th>
+                <th>Role Assignment</th>
+                <th>Supply Box Handled</th>
+                <th>Assembly Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color:#fff; font-weight:600;">Jane Doe</td>
+                <td>Coordinator Lead</td>
+                <td>First Aid Box</td>
+                <td><span class="status-indicator status-active">Safe & Prepared</span></td>
+              </tr>
+              <tr>
+                <td style="color:#fff; font-weight:600;">Billy Doe</td>
+                <td>Water Carrier</td>
+                <td>Flashlight / Water</td>
+                <td><span class="status-indicator status-active">Safe & Prepared</span></td>
+              </tr>
+              <tr>
+                <td style="color:#fff; font-weight:600;">Grandma Doe</td>
+                <td>Documents Keeper</td>
+                <td>ID Folder</td>
+                <td><span class="status-indicator status-pending">Awaiting Check</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

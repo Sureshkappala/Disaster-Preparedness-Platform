@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preparedness Guides - Disaster Safety</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- FIXED/STICKY HEADER & NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search resources..." onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="disaster-types.html">Disaster Types</a></li>
+          <li><a href="preparedness-guides.html" class="active">Preparedness Guides</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Prepared</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-SAFE</p>
+          <p><i class="fa-solid fa-envelope"></i> support@safealert.org</p>
+          <p><i class="fa-solid fa-location-dot"></i> 100 Safety Boulevard, Washington D.C.</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Prepared</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header reveal">
+    <div class="container">
+      <span class="badge">Structured Safety Blueprints</span>
+      <h1>Preparedness Guides</h1>
+      <p>Downloadable guidelines and checklists to organize safety plans across all key areas of life.</p>
+    </div>
+  </div>
+
+  <!-- GUIDES GRID -->
+  <section class="section"><div class="container reveal">
+      <div class="guides-grid reveal-stagger">
+        <!-- 1. Family Preparedness -->
+        <div class="guide-card glass-panel">
+          <div class="guide-card-img" style="background: rgba(16, 185, 129, 0.05); color: var(--secondary);">
+            <i class="fa-solid fa-people-roof" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>Family Preparedness</h3>
+            <p>Ensure your household operates cohesively during grid outages, evacuations, and flash hazards.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Establish escape exits in every room</li>
+                <li>Designate outer family meeting spot</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Walk children through exit routes quarterly so they don't panic.</p>
+            <a href="emergency-plan.html" class="btn btn-outline btn-sm">Build Family Plan</a>
+          </div>
+        </div>
+
+        <!-- 2. Workplace Preparedness -->
+        <div class="guide-card glass-panel" style="border-color: var(--border-glass) !important;">
+          <div class="guide-card-img" style="background: rgba(249, 115, 22, 0.05); color: var(--accent);">
+            <i class="fa-solid fa-building-shield" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>Workplace Preparedness</h3>
+            <p>Develop continuity protocols, assign safety wardens, and prepare office infrastructure.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Install lit exit signs and path guides</li>
+                <li>Audit structural first-aid cabinetry</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Back up operational records on secure remote servers daily.</p>
+            <a href="resources.html" class="btn btn-outline btn-sm">Read Workplace Guide</a>
+          </div>
+        </div>
+
+        <!-- 3. School Preparedness -->
+        <div class="guide-card glass-panel">
+          <div class="guide-card-img" style="background: rgba(16, 185, 129, 0.05); color: var(--secondary);">
+            <i class="fa-solid fa-school-flag" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>School Preparedness</h3>
+            <p>Ensure student security through teacher responsibilities and safe lockdown protocols.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Maintain child release authority lists</li>
+                <li>Conduct monthly fire & storm drills</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Keep emergency food pouches stored in gym lockers.</p>
+            <a href="resources.html" class="btn btn-outline btn-sm">Read School Guide</a>
+          </div>
+        </div>
+
+        <!-- 4. Community Preparedness -->
+        <div class="guide-card glass-panel" style="border-color: var(--border-glass) !important;">
+          <div class="guide-card-img" style="background: rgba(249, 115, 22, 0.05); color: var(--accent);">
+            <i class="fa-solid fa-users-gear" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>Community Preparedness</h3>
+            <p>Organize CERT networks, map sandbag lockers, and identify vulnerable households.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Compile phone logs of elderly neighbors</li>
+                <li>Stockpile communal cleaning supplies</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Share sandbags or snow blower gear with nearby residents.</p>
+            <a href="register.html" class="btn btn-outline btn-sm">Join Local CERT</a>
+          </div>
+        </div>
+
+        <!-- 5. Emergency Communication -->
+        <div class="guide-card glass-panel">
+          <div class="guide-card-img" style="background: rgba(16, 185, 129, 0.05); color: var(--secondary);">
+            <i class="fa-solid fa-tower-broadcast" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>Emergency Communication</h3>
+            <p>Set check-in nodes to coordinate group status updates when cell services degrade.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Assign out-of-town contact person</li>
+                <li>Download emergency radio applications</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Rely on SMS text messages over phone calls to save bandwidth.</p>
+            <a href="resources.html" class="btn btn-outline btn-sm">Read Comm Guide</a>
+          </div>
+        </div>
+
+        <!-- 6. Evacuation Planning -->
+        <div class="guide-card glass-panel" style="border-color: var(--border-glass) !important;">
+          <div class="guide-card-img" style="background: rgba(249, 115, 22, 0.05); color: var(--accent);">
+            <i class="fa-solid fa-map-location-dot" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>Evacuation Planning</h3>
+            <p>Determine safe road routes and packing checklists to exit high-risk areas quickly.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Map evacuation routes out of town</li>
+                <li>Keep vehicle fuel tanks at least half-full</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Keep physical road maps inside the vehicle in case GPS fails.</p>
+            <a href="resources.html" class="btn btn-outline btn-sm">Read Evac Guide</a>
+          </div>
+        </div>
+
+        <!-- 7. Emergency Kit Preparation -->
+        <div class="guide-card glass-panel">
+          <div class="guide-card-img" style="background: rgba(16, 185, 129, 0.05); color: var(--secondary);">
+            <i class="fa-solid fa-kit-medical" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>Emergency Kit Preparation</h3>
+            <p>Pack a modular, high-portability survival bag containing three days of food and water.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Water (one gallon per person per day)</li>
+                <li>First-aid kit & emergency flashlight</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Review expiration dates on supplies twice a year.</p>
+            <a href="emergency-kit.html" class="btn btn-outline btn-sm">Build Survival Bag</a>
+          </div>
+        </div>
+
+        <!-- 8. Landslide Preparedness -->
+        <div class="guide-card glass-panel">
+          <div class="guide-card-img" style="background: rgba(249, 115, 22, 0.05); color: var(--accent);">
+            <i class="fa-solid fa-mountain" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>Landslide Preparedness</h3>
+            <p>Understand soil drainage paths and secure buildings on steep terrain slope lines.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Inspect slope retaining walls</li>
+                <li>Monitor tilting trees or fence posts</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Keep hillsides clear of unanchored soil caches.</p>
+            <a href="disaster-types.html?tab=landslide" class="btn btn-outline btn-sm">Read Landslide Guide</a>
+          </div>
+        </div>
+
+        <!-- 9. Winter & Cold Safety -->
+        <div class="guide-card glass-panel">
+          <div class="guide-card-img" style="background: rgba(59, 130, 246, 0.05); color: #3b82f6;">
+            <i class="fa-solid fa-snowflake" style="font-size: 3rem;"></i>
+          </div>
+          <div class="guide-card-content">
+            <h3>Winter & Cold Safety</h3>
+            <p>Insulate utility water lines and prepare heating reserves to survive sub-zero hazards.</p>
+            <div class="guide-checklist-preview" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+              <h4>Checklist Focus</h4>
+              <ul>
+                <li>Wrap exposed copper water pipes</li>
+                <li>Verify backup generator fuel reserves</li>
+              </ul>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;"><strong>Safety Tip:</strong> Never operate combustion heaters indoors without vents.</p>
+            <a href="disaster-types.html?tab=extreme-weather" class="btn btn-outline btn-sm">Read Winter Guide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: FIRST RESPONDER COORDINATION -->
+  <section class="section" style="border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container grid-about reveal">
+      <div>
+        <span class="badge">Crisis Management</span>
+        <h2>Integrated Responder Wardens</h2>
+        <p>In high-urgency storm, flood, or fire warnings, municipal response assets require immediate roadway routes. SafeAlert is engineered to help coordinate localized emergency logistics so that rescue crews can deploy swiftly.</p>
+        <p style="margin-top:15px; color:var(--text-muted);">Practicing family evacuation drills minimizes delays, leaving city roads clear for heavy response vehicles to reach high-priority emergency alerts.</p>
+      </div>
+      <div>
+        <img src="images/disaster-scene-fire.jpg" alt="First responder fire trucks deploying during storm warning" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: EVACUATION DRILL STATISTICAL IMPACT -->
+  <section class="section section-light" style="border-top: 1px solid rgba(255,255,255,0.05);"><div class="container reveal">
+      <div class="grid-about" style="grid-template-columns: 0.8fr 1.2fr;">
+        
+        <!-- SVG Statistical Graph: Evacuation speed improvements -->
+        <div class="glass-panel" style="padding: 24px; text-align: center; background: #1e293b; color: #cbd5e1; border-color: var(--border-glass) !important;">
+          <h3 style="font-size:1.15rem; margin-bottom: 20px; color: var(--text-white);">Average Evacuation Time (Minutes)</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 15px; text-align: left; padding: 10px 0;">
+            <!-- Bar Row 1 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+                <span>No Emergency Blueprint:</span>
+                <strong>25 Mins</strong>
+              </div>
+              <div style="width: 100%; height: 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; overflow: hidden;">
+                <div style="width: 100%; height: 100%; background: #ef4444; border-radius: 8px;"></div>
+              </div>
+            </div>
+            
+            <!-- Bar Row 2 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+                <span>Basic Written Plan:</span>
+                <strong>14 Mins</strong>
+              </div>
+              <div style="width: 100%; height: 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; overflow: hidden;">
+                <div style="width: 56%; height: 100%; background: #f97316; border-radius: 8px;"></div>
+              </div>
+            </div>
+            
+            <!-- Bar Row 3 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+                <span>SafeAlert Interactive & Drilled Plan:</span>
+                <strong>5 Mins</strong>
+              </div>
+              <div style="width: 100%; height: 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; overflow: hidden;">
+                <div style="width: 20%; height: 100%; background: #10b981; border-radius: 8px;"></div>
+              </div>
+            </div>
+          </div>
+          
+          <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 15px; line-height: 1.4;">Comparison based on simulated neighborhood evac exercises. Having structured blueprints reduces exit times by 80%.</p>
+        </div>
+
+        <div>
+          <span class="badge">Speed Matters</span>
+          <h2>The Crucial Benefit of Evacuation Drills</h2>
+          <p>Simulation exercises transform chaotic crisis scenarios into calm, reflex-driven evacuations. Families that map out routes and practice them exit hazard zones four times faster than families without a plan.</p>
+          <p style="margin-top: 15px; color: var(--text-muted);">Practicing evacuation routes ensures that power blackouts, sudden smoke hazards, or blocked passages do not lead to panic or delays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: DOWNLOADABLE RESOURCES CENTER -->
+  <section class="section section-light" style="border-top: 1px solid rgba(255,255,255,0.05); padding-bottom: 60px;"><div class="container reveal">
+      <div class="section-title-wrap">
+        <h2>Downloadable Safety Manuals</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">Take emergency blueprints offline. Download these official PDF safety checklists to print out for your family or organization.</p>
+      </div>
+      <div class="guides-grid" style="margin-top: 30px;">
+        <div class="guide-card glass-panel" style="background:#070d1e; padding: 24px; border-color: var(--border-glass) !important;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <i class="fa-solid fa-file-pdf" style="font-size: 2.5rem; color: #ef4444;"></i>
+            <div>
+              <h4 style="margin: 0; color: var(--text-white);">Family Prep Manual</h4>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">PDF Guide • 2.4 MB</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px;">Comprehensive 72-hour family evacuation, kit builder, and contact node checklist.</p>
+          <a href="404.html" class="btn btn-secondary btn-sm" onclick="event.preventDefault(); window.showCustomAlert('Downloading Family Prep Manual PDF...', 'success');" style="margin-top: auto;">Download PDF</a>
+        </div>
+        <div class="guide-card glass-panel" style="background:#070d1e; padding: 24px; border-color: var(--border-glass) !important;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <i class="fa-solid fa-file-pdf" style="font-size: 2.5rem; color: #ef4444;"></i>
+            <div>
+              <h4 style="margin: 0; color: var(--text-white);">Workplace Protocol</h4>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">PDF Guide • 3.1 MB</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px;">Safety warden guidelines, emergency lighting audits, and drill templates for businesses.</p>
+          <a href="404.html" class="btn btn-secondary btn-sm" onclick="event.preventDefault(); window.showCustomAlert('Downloading Workplace Protocol PDF...', 'success');" style="margin-top: auto;">Download PDF</a>
+        </div>
+        <div class="guide-card glass-panel" style="background:#070d1e; padding: 24px; border-color: var(--border-glass) !important;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            <i class="fa-solid fa-file-pdf" style="font-size: 2.5rem; color: #ef4444;"></i>
+            <div>
+              <h4 style="margin: 0; color: var(--text-white);">School Drill Kit</h4>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">PDF Guide • 1.8 MB</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px;">Tornado, windstorm, and fire drill checklists, child release logs, and teacher roles.</p>
+          <a href="404.html" class="btn btn-secondary btn-sm" onclick="event.preventDefault(); window.showCustomAlert('Downloading School Drill Kit PDF...', 'success');" style="margin-top: auto;">Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Mobilizing rapid rescue coordination, survival resources, food security calculators, and community resilience blueprints for safety zones.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="disaster-types.html">Disaster Types</a>
+          <a href="preparedness-guides.html">Preparedness Guides</a>
+          <a href="resources.html">Resources Library</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Coordinates</a>
+          <a href="404.html">Terms & Agreements</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="newsletter-desc">Get quarterly emergency updates, volunteer alerts, and relief operations reports.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); window.showCustomAlert('Subscribed successfully to SafeAlert Newsletter!', 'success');">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly. All rights reserved. Designed for emergency relief.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Security Audits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

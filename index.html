@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeAlert | Disaster Preparedness & Safety Platform</title>
+  <meta name="description" content="Prepare today, stay safer tomorrow. Access resources, build emergency kits, and plan evacuation routes for floods, earthquakes, and extreme weather.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- FIXED/STICKY HEADER & NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search resources..." onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="disaster-types.html">Disaster Types</a></li>
+          <li><a href="preparedness-guides.html">Preparedness Guides</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Get Prepared</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-SAFE</p>
+          <p><i class="fa-solid fa-envelope"></i> support@safealert.org</p>
+          <p><i class="fa-solid fa-location-dot"></i> 100 Safety Boulevard, Washington D.C.</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Prepared</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ALERT STRIP (EMERGENCY ALERTS DISPLAY) -->
+  <div class="alert-strip">
+    <span>Alert Status</span>
+    <p>Severe weather monitoring is active. Review your family safety plan and emergency kit checklist today.</p>
+  </div>
+
+  <!-- 1. HERO SECTION & FLOATING SEARCH/CALCULATOR -->
+  <section class="hero"><div class="container reveal">
+      <div class="hero-grid" style="margin-bottom: 50px;">
+        <div class="hero-content">
+          <span class="badge badge-alert">Protecting Families & Communities</span>
+          <h1>Prepare Today. <br><span class="text-gradient-orange">Stay Safer</span> Tomorrow.</h1>
+          <p>Emergencies strike without warning. SafeAlert empowers families, workplaces, schools, and communities with interactive planning templates, supply calculators, and expert-verified guidelines for major emergencies.</p>
+          <div class="hero-actions" style="display: flex; gap: 16px; margin-bottom: 20px;">
+            <a href="emergency-kit.html" class="btn btn-primary">Build Emergency Kit</a>
+            <a href="preparedness-guides.html" class="btn btn-secondary">Explore Safety Guides</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-portfolio-slider">
+            <!-- Slide 1: Household -->
+            <div class="portfolio-slide active">
+              <img src="images/hero-safety.jpg" alt="Household Safety">
+              <div class="portfolio-glass-card">
+                <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--secondary); display: inline-block;">Household</span>
+                <h4>Family Safety Blueprint</h4>
+                <p>Protected: 12,450+ Homes</p>
+              </div>
+            </div>
+            <!-- Slide 2: Workplace -->
+            <div class="portfolio-slide">
+              <img src="images/storm-preparedness.jpg" alt="Workplace Safety">
+              <div class="portfolio-glass-card">
+                <span class="badge" style="background: rgba(249, 115, 22, 0.15); color: var(--accent); display: inline-block;">Workplace</span>
+                <h4>Business Operations Safe-Shield</h4>
+                <p>Protected: 850+ Office Hubs</p>
+              </div>
+            </div>
+            <!-- Slide 3: School -->
+            <div class="portfolio-slide">
+              <img src="images/family-plan.jpg" alt="School Safety">
+              <div class="portfolio-glass-card">
+                <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--secondary); display: inline-block;">Academic</span>
+                <h4>Active School Evacuation Plan</h4>
+                <p>Protected: 420+ Campuses</p>
+              </div>
+            </div>
+            <!-- Slide 4: Volunteer CERT -->
+            <div class="portfolio-slide">
+              <img src="images/family-gathering.jpg" alt="CERT Network">
+              <div class="portfolio-glass-card">
+                <span class="badge" style="background: rgba(249, 115, 22, 0.15); color: var(--accent); display: inline-block;">Community</span>
+                <h4>CERT Volunteer Network</h4>
+                <p>Active: 3,200+ Responders</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Booking-Style Prep Search / Calculator -->
+      <div class="booking-search-container">
+        <form class="booking-form glass-panel" id="bookingSearchForm" novalidate>
+          <!-- Area/Location Field -->
+          <div class="form-group">
+            <label for="bookingDest">Your Location / Region</label>
+            <div class="form-input-wrap">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" name="region" id="bookingDest" class="form-control" placeholder="Enter zip or city" required>
+            </div>
+            <span class="error-msg">Location is required.</span>
+          </div>
+
+          <!-- Target Hazard Dropdown -->
+          <div class="form-group">
+            <label for="bookingHazard">Target Hazard</label>
+            <div class="form-input-wrap">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <select name="hazard" id="bookingHazard" class="form-control" style="background:#070d1e; padding-left:2.5rem;" required>
+                <option value="" disabled selected>Select Threat...</option>
+                <option value="flood">Flood</option>
+                <option value="cyclone">Cyclone / Storm</option>
+                <option value="earthquake">Earthquake</option>
+                <option value="fire">Fire Safety</option>
+              </select>
+            </div>
+            <span class="error-msg">Select a hazard type.</span>
+          </div>
+
+          <!-- Group/Family Size -->
+          <div class="form-group">
+            <label for="bookingTravelers">Household Members</label>
+            <div class="form-input-wrap">
+              <i class="fa-solid fa-user-group"></i>
+              <input type="number" name="family_size" id="bookingTravelers" class="form-control" min="1" placeholder="Quantity" required>
+            </div>
+            <span class="error-msg">Must be 1 or more.</span>
+          </div>
+
+          <!-- Prep Budget -->
+          <div class="form-group">
+            <label for="bookingBudget">Prep Budget ($)</label>
+            <div class="form-input-wrap">
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input type="number" name="budget" id="bookingBudget" class="form-control" min="0" placeholder="Max budget limit" required>
+            </div>
+            <span class="error-msg">Budget must be positive.</span>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group btn-submit-wrap">
+            <label class="btn-label-placeholder" style="visibility: hidden; display: block; margin-bottom: 8px;">Explore</label>
+            <button type="submit" class="btn btn-primary" id="btnSearchSubmit" style="width: 100%;">
+              <i class="fa-solid fa-magnifying-glass"></i> Explore
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. DISASTER TYPES GRID -->
+  <section class="section" id="disasters">
+    <div class="container reveal">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Hazards & Threat Levels</span>
+        <h2 class="section-title">Disaster Categories</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">Select a category to learn vital safety protocols and before, during, and after action guides.</p>
+      </div>
+      <div class="disaster-grid reveal-stagger">
+        <!-- Flood -->
+        <div class="disaster-card">
+          <div class="disaster-icon"><i class="fa-solid fa-house-flood-water"></i></div>
+          <h3>Flood Safety</h3>
+          <p>Rising water levels present severe hazards. Learn how to relocate to high ground and protect assets.</p>
+          <a href="disaster-types.html?tab=flood" class="btn-link">Learn Protocol &rarr;</a>
+        </div>
+        <!-- Cyclone -->
+        <div class="disaster-card disaster-card-orange">
+          <div class="disaster-icon"><i class="fa-solid fa-hurricane"></i></div>
+          <h3>Cyclone & Typhoon</h3>
+          <p>Prepare structures for destructive high winds, storm surges, and torrential downpours.</p>
+          <a href="disaster-types.html?tab=cyclone" class="btn-link">Learn Protocol &rarr;</a>
+        </div>
+        <!-- Earthquake -->
+        <div class="disaster-card">
+          <div class="disaster-icon"><i class="fa-solid fa-house-crack"></i></div>
+          <h3>Earthquake Response</h3>
+          <p>Understand the critical Drop, Cover, and Hold On technique to minimize injury risk.</p>
+          <a href="disaster-types.html?tab=earthquake" class="btn-link">Learn Protocol &rarr;</a>
+        </div>
+        <!-- Fire -->
+        <div class="disaster-card disaster-card-orange">
+          <div class="disaster-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <h3>Fire Safety</h3>
+          <p>Prevent residential fires and plan survival routes for sudden bushfire or wildfire emergencies.</p>
+          <a href="disaster-types.html?tab=fire" class="btn-link">Learn Protocol &rarr;</a>
+        </div>
+        <!-- Storm -->
+        <div class="disaster-card">
+          <div class="disaster-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+          <h3>Severe Storms</h3>
+          <p>Manage risks regarding high lightning activity, hail strikes, and grid power outages.</p>
+          <a href="disaster-types.html?tab=storm" class="btn-link">Learn Protocol &rarr;</a>
+        </div>
+        <!-- Heatwave -->
+        <div class="disaster-card disaster-card-orange">
+          <div class="disaster-icon"><i class="fa-solid fa-temperature-high"></i></div>
+          <h3>Extreme Heatwave</h3>
+          <p>Protect vulnerable group members from dehydration, heat illness, and cardiovascular stress.</p>
+          <a href="disaster-types.html?tab=heatwave" class="btn-link">Learn Protocol &rarr;</a>
+        </div>
+        <!-- Landslide -->
+        <div class="disaster-card">
+          <div class="disaster-icon"><i class="fa-solid fa-mountain"></i></div>
+          <h3>Landslide & Mudslide</h3>
+          <p>Learn slope stability indicators, soil movement signs, and evacuation zone priorities.</p>
+          <a href="disaster-types.html?tab=landslide" class="btn-link">Learn Protocol &rarr;</a>
+        </div>
+        <!-- Extreme Weather -->
+        <div class="disaster-card disaster-card-orange">
+          <div class="disaster-icon"><i class="fa-solid fa-snowflake"></i></div>
+          <h3>Extreme Cold/Blizzard</h3>
+          <p>Understand thermal insulation protocols, pipe freeze safety, and backup generator hazards.</p>
+          <a href="disaster-types.html?tab=extreme-weather" class="btn-link">Learn Protocol &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SPLIT SECTION - INTERACTIVE CHECKLIST -->
+  <section class="section section-light" id="checklist">
+    <div class="container grid-about reveal">
+      <div class="checklist-content">
+        <span class="badge">Dynamic Safety Tool</span>
+        <h2>Your Preparedness Checklist</h2>
+        <p>A fully prepared household can sustain itself during the critical first 72 hours of a disaster before rescue teams arrive. Check off items as you secure them to monitor your safety score.</p>
+        <div class="tips-container" style="grid-template-columns: 1fr; margin-top: 20px;">
+          <div class="tip-box" style="background: rgba(0,0,0,0.02); padding: 20px; border-left: 4px solid var(--secondary);">
+            <div class="tip-list" style="display: flex; flex-direction: column; gap: 12px;">
+              <div class="tip-item" style="display: flex; gap: 10px;">
+                <i class="fa-solid fa-check" style="color: var(--secondary); margin-top: 4px;"></i>
+                <p><strong>Familiarity:</strong> Ensure all family members know where emergency kit items are kept.</p>
+              </div>
+              <div class="tip-item" style="display: flex; gap: 10px;">
+                <i class="fa-solid fa-check" style="color: var(--secondary); margin-top: 4px;"></i>
+                <p><strong>Expiry Control:</strong> Check battery charges and rotate food/water reserves every six months.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checklist-box glass-card glass-card-green" style="background: #070d1e; color: #fff;">
+        <div class="progress-container">
+          <div class="progress-header">
+            <span>Preparedness Progress</span>
+            <span class="progress-percentage">0%</span>
+          </div>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+        <div class="checklist-items">
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Emergency Water (3 Gallons)</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Non-Perishable Food Supply</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Fully Loaded First Aid Kit</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Flashlight & Spare Batteries</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Critical Prescriptions</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Important Documents (IDs, Deeds)</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>High Capacity Power Bank</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Emergency Contacts List</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Whistle (Signaling Help)</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox">
+            <span>Thermal Space Blanket</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. EMERGENCY KIT SHOWCASE SECTION -->
+  <section class="section">
+    <div class="container reveal">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Essential Supplies</span>
+        <h2>Build Your Emergency Kit</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">A standard 72-hour survival kit contains these ten key categories. Do you have them ready?</p>
+      </div>
+      <div class="kit-showcase reveal-stagger">
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-droplet"></i>
+          <h4>Water</h4>
+          <p>1 Gallon per person per day for drinking & sanitation.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-box-tissue"></i>
+          <h4>Food</h4>
+          <p>High protein canned or freeze-dried meals.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-kit-medical"></i>
+          <h4>First Aid</h4>
+          <p>Bandages, antiseptic wipes, scissors, and guide book.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-lightbulb"></i>
+          <h4>Flashlight</h4>
+          <p>Tactical LED light to navigate in total darkness.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-radio"></i>
+          <h4>Radio</h4>
+          <p>Hand-crank or NOAA weather alert radio updates.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-battery-three-quarters"></i>
+          <h4>Batteries</h4>
+          <p>Fresh backup supply of standard AA and AAA cells.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-charging-station"></i>
+          <h4>Power Bank</h4>
+          <p>High-capacity battery for charging devices.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-wind"></i>
+          <h4>Whistle</h4>
+          <p>A reliable tool to signal emergency rescue teams.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-square-full"></i>
+          <h4>Blanket</h4>
+          <p>Mylar solar blankets to prevent hypothermia.</p>
+        </div>
+        <div class="kit-item-card glass-card">
+          <i class="fa-solid fa-folder-open"></i>
+          <h4>Documents</h4>
+          <p>Waterproof container with vital personal paperwork.</p>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top: 40px;">
+        <a href="emergency-kit.html" class="btn btn-primary">Customize & Save Your Kit Check</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW TO PREPARE TIMELINE -->
+  <section class="section section-light">
+    <div class="container reveal">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">4-Step Action Path</span>
+        <h2>How To Prepare</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">Learn the chronological milestones to turn awareness into actionable emergency resilience.</p>
+      </div>
+      <div class="timeline reveal-stagger">
+        <!-- Step 1 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">1</div>
+          <div class="timeline-content" style="color:#fff;">
+            <h3>Know the Risk</h3>
+            <p style="color:var(--text-muted);">Conduct research on natural disaster records in your region. Find out if your residence sits in a low-lying flood zone or adjacent to dry woodland.</p>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">2</div>
+          <div class="timeline-content" style="color:#fff;">
+            <h3>Make a Plan</h3>
+            <p style="color:var(--text-muted);">Define two exit escape points per room, mapping exact paths to family meeting spots outside risk zones. Establish a designated emergency communication protocol.</p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">3</div>
+          <div class="timeline-content" style="color:#fff;">
+            <h3>Build a Kit</h3>
+            <p style="color:var(--text-muted);">Assemble waterproof containers filled with water, stable shelf food, emergency lighting tools, battery packs, and dynamic medicine reserves.</p>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="timeline-step">
+          <div class="timeline-badge">4</div>
+          <div class="timeline-content" style="color:#fff;">
+            <h3>Stay Informed</h3>
+            <p style="color:var(--text-muted);">Download emergency safety warning apps, acquire an automated NOAA weather radio unit, and actively monitor municipal notifications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. EMERGENCY PLAN SUMMARY SECTION -->
+  <section class="section">
+    <div class="container grid-about">
+      <div class="plan-visual">
+        <img src="images/family-plan.jpg" alt="Family reviewing safety plan" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-glass); max-height: 350px; object-fit: cover;">
+      </div>
+      <div>
+        <span class="badge badge-alert">Strategic Preparedness</span>
+        <h2>Emergency Plan Section</h2>
+        <p>A custom safety blueprint helps reduce panic when crisis situations unfold. Keep your emergency plans stored, updated, and within easy reach of all household members.</p>
+        <ul style="margin: 20px 0; display: flex; flex-direction: column; gap: 12px;">
+          <li style="display: flex; align-items: center; gap: 10px; font-weight: 500;">
+            <i class="fa-solid fa-circle-check" style="color:var(--secondary);"></i>
+            Designated safe assembly rooms for structural storms
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; font-weight: 500;">
+            <i class="fa-solid fa-circle-check" style="color:var(--secondary);"></i>
+            Pre-determined meeting points inside and outside your neighborhood
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px; font-weight: 500;">
+            <i class="fa-solid fa-circle-check" style="color:var(--secondary);"></i>
+            Assigned emergency coordination roles for each family member
+          </li>
+        </ul>
+        <a href="emergency-plan.html" class="btn btn-primary">Create Your Emergency Plan Form</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. DISASTER-SPECIFIC SAFETY TIPS -->
+  <section class="section section-light"><div class="container reveal">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Immediate Response Advice</span>
+        <h2>Disaster Safety Tips</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">Crucial guidelines to protect your health and survival when emergencies strike.</p>
+      </div>
+      <div class="tips-container">
+        <!-- Flood -->
+        <div class="tip-box" style="background: #fff; border-left: 5px solid var(--secondary);">
+          <h3>Flood Safety</h3>
+          <div class="tip-list" style="margin-top: 15px;">
+            <div class="tip-item">
+              <i class="fa-solid fa-circle-check" style="color: var(--secondary); margin-top:4px;"></i>
+              <p>Relocate immediately to higher elevations when flash flood warnings display.</p>
+            </div>
+            <div class="tip-item">
+              <i class="fa-solid fa-circle-check" style="color: var(--secondary); margin-top:4px;"></i>
+              <p>Keep your emergency supplies accessible and sealed in watertight dry-packs.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Earthquake -->
+        <div class="tip-box tip-box-orange" style="background: #fff; border-left: 5px solid var(--accent);">
+          <h3>Earthquake Safety</h3>
+          <div class="tip-list" style="margin-top: 15px;">
+            <div class="tip-item">
+              <i class="fa-solid fa-circle-check" style="color: var(--accent); margin-top:4px;"></i>
+              <p>Practice Drop, Cover, and Hold On under heavy wood structures.</p>
+            </div>
+            <div class="tip-item">
+              <i class="fa-solid fa-circle-check" style="color: var(--accent); margin-top:4px;"></i>
+              <p>Stay clear of windows, heavy shelves, glass panels, and brick walls.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. ANIMATED STATS / COUNTERS -->
+  <section class="section" style="background-color: var(--primary-light); border-top:1px solid rgba(255,255,255,0.05);">
+    <div class="container stats-grid">
+      <div class="stat-card glass-card">
+        <div class="stat-number" data-target="4500" data-suffix="+">0+</div>
+        <div class="stat-label">Guides Issued</div>
+      </div>
+      <div class="stat-card stat-card-accent glass-card">
+        <div class="stat-number" data-target="10000" data-suffix="+">0+</div>
+        <div class="stat-label">Resources</div>
+      </div>
+      <div class="stat-card glass-card">
+        <div class="stat-number" data-target="12000" data-suffix="+">0+</div>
+        <div class="stat-label">Checklists Saved</div>
+      </div>
+      <div class="stat-card stat-card-accent glass-card">
+        <div class="stat-number" data-target="8" data-suffix="">0</div>
+        <div class="stat-label">Disaster Areas</div>
+      </div>
+      <div class="stat-card glass-card">
+        <div class="stat-number" data-target="25000" data-suffix="+">0+</div>
+        <div class="stat-label">Active Users</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. EMERGENCY RESOURCES PREVIEW -->
+  <section class="section"><div class="container reveal">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Education Library</span>
+        <h2>Emergency Preparedness Resources</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">Read quick articles written by disaster mitigation experts to build household resilience.</p>
+      </div>
+      <div class="resources-grid reveal-stagger">
+        <div class="resource-card glass-panel">
+          <div class="resource-meta">
+            <span class="resource-tag">Family</span>
+            <span>5 min read</span>
+          </div>
+          <h3 style="margin-top: 15px;">Evacuation Route Preparedness</h3>
+          <p>Learn how to establish escape routes out of high-rise structures during power grid drops.</p>
+          <a href="resources.html" class="btn-link" style="color: var(--secondary); font-weight:600; margin-top:auto;">Read Resource &rarr;</a>
+        </div>
+        <div class="resource-card glass-panel">
+          <div class="resource-meta">
+            <span class="resource-tag" style="color: var(--accent);">Supplies</span>
+            <span>8 min read</span>
+          </div>
+          <h3 style="margin-top: 15px;">Water Purification Strategies</h3>
+          <p>Review standard chemical treatments and manual filtration routines for water safety during outages.</p>
+          <a href="resources.html" class="btn-link" style="color: var(--secondary); font-weight:600; margin-top:auto;">Read Resource &rarr;</a>
+        </div>
+        <div class="resource-card glass-panel">
+          <div class="resource-meta">
+            <span class="resource-tag">Planning</span>
+            <span>6 min read</span>
+          </div>
+          <h3 style="margin-top: 15px;">Workplace Drill Guidelines</h3>
+          <p>Steps to coordinate workplace drills, appoint wardens, and keep employees informed of exits.</p>
+          <a href="resources.html" class="btn-link" style="color: var(--secondary); font-weight:600; margin-top:auto;">Read Resource &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. COMMUNITY SECTION -->
+  <section class="section section-light">
+    <div class="container grid-about">
+      <div>
+        <span class="badge">Mutual Support</span>
+        <h2>Community Preparedness</h2>
+        <p>No community should face emergencies alone. Real resilience occurs when neighbors coordinate safety activities, run joint drills, and create communication trees.</p>
+        <ul style="margin: 20px 0; display: flex; flex-direction: column; gap: 12px;">
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
+            Establish neighborhood emergency check-in trees
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i>
+            Identify and assist vulnerable or elderly neighbors
+          </li>
+        </ul>
+        <a href="register.html" class="btn btn-primary" style="margin-top: 10px;">Join the Preparedness Community</a>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <img src="images/family-kit.jpg" alt="Family preparing emergency kit" style="width: 100%; max-width: 400px; border-radius: 12px; border: 1px solid var(--border-glass); object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. TESTIMONIALS SLIDER SECTION -->
+  <section class="section testimonial-section"><div class="container reveal">
+      <div class="section-title-wrap">
+        <h2>Real Safety Experiences</h2>
+        <p style="color: var(--text-muted); max-width:600px; margin:0 auto;">See how standard household pre-planning makes a difference during severe weather events.</p>
+      </div>
+      <div class="slider-container">
+        <div class="testimonial-track">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-img" style="border: 3px solid var(--secondary); background: #fff; color: #000; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:1.5rem;">SJ</div>
+            <p class="testimonial-text">"When the river rose rapidly last winter, our local area lost power and street access. Because we had checked off our checklist and had a pre-built kit, we had clean water and battery power ready. It saved us."</p>
+            <div class="testimonial-author">Sarah Jenkins</div>
+            <div class="testimonial-location">East Coast Flood Zone</div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-img" style="border: 3px solid var(--accent); background: #fff; color: #000; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:1.5rem;">RC</div>
+            <p class="testimonial-text">"Our school district implemented the emergency guidelines for tornado safety drills. When a sudden high wind hazard touched down, over 300 children evacuated to safe rooms within minutes."</p>
+            <div class="testimonial-author">Robert Chen</div>
+            <div class="testimonial-location">Midwest Tornado Belt</div>
+          </div>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FINAL CTA SECTION -->
+  <section class="section" style="background: linear-gradient(135deg, #0A1128 0%, #001F54 100%); text-align: center;"><div class="container reveal">
+      <h2 style="font-size:2.5rem; margin-bottom: 20px;">Are You Prepared for an Emergency?</h2>
+      <p style="color: var(--text-muted); font-size:1.15rem; max-width: 600px; margin:0 auto 40px auto;">Do not wait for disaster warnings to appear. Take simple steps today to protect your family and home.</p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="index.html#checklist" class="btn btn-primary">Start Preparedness Checklist</a>
+        <a href="emergency-kit.html" class="btn btn-green">Build Emergency Kit</a>
+        <a href="emergency-plan.html" class="btn btn-secondary">Create Emergency Plan</a>
+      </div>
+    </div>
+  </section>
+  <!-- PROFESSIONAL FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+        </a>
+        <p class="footer-desc">Mobilizing rapid rescue coordination, survival resources, food security calculators, and community resilience blueprints for safety zones.</p>
+        <div class="social-links">
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="disaster-types.html">Disaster Types</a>
+          <a href="preparedness-guides.html">Preparedness Guides</a>
+          <a href="resources.html">Resources Library</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="contact.html">Contact Coordinates</a>
+          <a href="404.html">Terms & Agreements</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p class="newsletter-desc">Get quarterly emergency updates, volunteer alerts, and relief operations reports.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); window.showCustomAlert('Subscribed successfully to SafeAlert Newsletter!', 'success');">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Stackly. All rights reserved. Designed for emergency relief.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Security Audits</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
