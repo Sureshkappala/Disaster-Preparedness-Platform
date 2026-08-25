@@ -48,6 +48,16 @@
           <span class="form-error-msg">A valid email address is required.</span>
         </div>
 
+        <!-- MOBILE NUMBER -->
+        <div class="form-group">
+          <label for="regPhone">Mobile Number *</label>
+          <div style="position: relative;">
+            <i class="fa-solid fa-phone" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem;"></i>
+            <input type="tel" id="regPhone" placeholder="1234567890" class="form-control" style="padding-left: 2.75rem; background: #070d1e; border: 1px solid var(--border-glass); color: #fff;" required oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="10">
+          </div>
+          <span class="form-error-msg">A valid 10-digit mobile number is required.</span>
+        </div>
+
         <!-- DASHBOARD ROLE SELECT -->
         <div class="form-group">
           <label for="regRole">Preparedness Profile Role *</label>

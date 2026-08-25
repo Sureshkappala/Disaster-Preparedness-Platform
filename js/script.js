@@ -538,15 +538,20 @@ function initFormValidations() {
             const emailInput = form.querySelector('input[type="email"]');
             const roleSelect = form.querySelector('select'); // dropdown role select
             const nameInput = form.querySelector('#regName') || form.querySelector('input[type="text"]');
+            const phoneInput = form.querySelector('#regPhone') || form.querySelector('input[type="tel"]');
 
             const email = emailInput ? emailInput.value : 'coordinator@safealert.org';
             const name = nameInput ? nameInput.value : email.split('@')[0];
             const role = roleSelect ? roleSelect.value : 'individual';
+            const phone = phoneInput ? phoneInput.value : '';
 
             localStorage.setItem('loggedInUserName', name.toUpperCase());
             localStorage.setItem('loggedInUserRole', role);
             localStorage.setItem('user_logged_in', 'true');
             localStorage.setItem('user_email', email);
+            if (phone) {
+              localStorage.setItem('loggedInUserPhone', phone);
+            }
 
             // Conditional Redirection: if role is coordinator, send to admin-dashboard.html, else user-dashboard.html
             const destination = (role === 'coordinator') 
