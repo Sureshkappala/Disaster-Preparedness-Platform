@@ -547,20 +547,22 @@ function initFormValidations() {
 
             localStorage.setItem('loggedInUserName', name.toUpperCase());
             localStorage.setItem('loggedInUserRole', role);
-            localStorage.setItem('user_logged_in', 'true');
             localStorage.setItem('user_email', email);
             if (phone) {
               localStorage.setItem('loggedInUserPhone', phone);
             }
+            if (form.id === 'loginForm') {
+              localStorage.setItem('user_logged_in', 'true');
+            }
 
-            // Conditional Redirection: if role is coordinator, send to admin-dashboard.html, else user-dashboard.html
-            const destination = (role === 'coordinator') 
-                                ? 'admin-dashboard.html' 
-                                : 'user-dashboard.html';
+            // Conditional Redirection: if registerForm, go to login.html; if loginForm, go to dashboard.
+            const destination = (form.id === 'registerForm')
+                                ? 'login.html'
+                                : ((role === 'coordinator') ? 'admin-dashboard.html' : 'user-dashboard.html');
 
             const alertMsg = form.id === 'loginForm' 
                              ? 'Credentials Authorized! Redirecting to SafeAlert Command...' 
-                             : 'Account Successfully Created! Setting up profile...';
+                             : 'Account Successfully Created! Redirecting to Login...';
 
             window.showCustomAlert(alertMsg, 'success');
             setTimeout(() => {
