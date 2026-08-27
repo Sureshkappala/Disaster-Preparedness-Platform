@@ -146,12 +146,14 @@ textarea:focus-visible {
 .section {
   padding: 100px 0;
   position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .section-light {
   --text-muted: #475569; /* Darker slate for muted text on light backgrounds */
   background-color: var(--bg-light);
   color: var(--text-dark);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .section-light h1, .section-light h2, .section-light h3, .section-light h4 {
