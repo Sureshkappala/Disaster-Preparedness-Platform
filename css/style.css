@@ -2591,6 +2591,7 @@ textarea:focus-visible {
 }
 
 .mission-card p {
+  color: #cbd5e1;
   font-size: 0.9rem;
   line-height: 1.6;
   margin: 0;
@@ -2858,6 +2859,10 @@ textarea:focus-visible {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--accent);
+}
+
+.helpline-card p {
+  color: #cbd5e1;
 }
 
 @media (max-width: 992px) {
